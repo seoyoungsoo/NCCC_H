@@ -1,0 +1,2 @@
+rootProject.name='NCCC_H'
+include ':app'

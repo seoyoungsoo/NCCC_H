@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HotelDetail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/hotel_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="9dp"
+                    android:weightSum="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.9">
+
+                        <ImageView
+                            android:id="@+id/hotel_detail_back"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/detail_arrow"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1">
+
+                        <TextView
+                            android:id="@+id/hotel_detail_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="호텔 이름"
+                            android:textColor="#292929"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#66222222"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/hotel_detail_img1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="9dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="5dp"
+                            android:adjustViewBounds="false"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/largepicture"
+                            android:layout_marginRight="5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/hotel_detail_img2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginBottom="9dp"
+                            android:layout_marginStart="5dp"
+                            android:adjustViewBounds="false"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/largepicture"
+                            android:layout_marginLeft="5dp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:src="@drawable/detail_bar">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/like"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_marginRight="7dp"
+                        android:src="@drawable/like" />
+
+                    <ImageView
+                        android:id="@+id/hate"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="13dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toStartOf="@+id/like"
+                        android:layout_toLeftOf="@+id/like"
+                        android:src="@drawable/hate" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/hotelsub"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:background="#ffffff"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:orientation="vertical"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/hotel_country"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="도시이름"/>
+
+                            <TextView
+                                android:id="@+id/hotel_addr"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="호텔 주소"
+                                android:textColor="#797979"
+                                android:layout_marginTop="5dp"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:orientation="vertical"
+                            android:weightSum="5">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:weightSum="10.5"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="숙소 청결 상태"
+                                    android:layout_weight="3"
+                                    android:textStyle="bold"/>
+
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_detail_progress1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/colorAccent"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
+
+                                <TextView
+                                    android:id="@+id/progress_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:weightSum="10.5"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="부대시설"
+                                    android:layout_weight="3"
+                                    android:textStyle="bold"/>
+
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_detail_progress2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/colorAccent"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
+
+                                <TextView
+                                    android:id="@+id/progress_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:weightSum="10.5"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치"
+                                    android:layout_weight="3"
+                                    android:textStyle="bold"/>
+
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_detail_progress3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/colorAccent"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
+
+                                <TextView
+                                    android:id="@+id/progress_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:weightSum="10.5"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="서비스"
+                                    android:layout_weight="3"
+                                    android:textStyle="bold"/>
+
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_detail_progress4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/colorAccent"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
+
+                                <TextView
+                                    android:id="@+id/progress_4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:weightSum="10.5"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="가격 대비 만족도"
+                                    android:layout_weight="3"
+                                    android:textStyle="bold"/>
+
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_detail_progress5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/colorAccent"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
+
+                                <TextView
+                                    android:id="@+id/progress_5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="평균 가격"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:id="@+id/hotel_detail_value"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="00000원"
+                                    android:textSize="30dp"
+                                    android:gravity="end"
+                                    android:layout_weight="1"
+                                    android:textStyle="bold"
+                                    android:layout_marginRight="9dp"
+                                    android:layout_marginEnd="9dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:weightSum="5">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:layout_weight="4">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:text="주변 관광지"
+                                            android:textStyle="bold"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:layout_weight="1"
+                                        android:layout_marginTop="10dp">
+
+                                        <TextView
+                                            android:id="@+id/hotel_detail_Tourdest"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="100dp"
+                                            android:text="관광지 내용 호이안 호치민 하노이 달랏 나트랑 다낭 등 등 등 등 등 등 등 등" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+                <Button
+                    android:id="@+id/hotel_detail_reservation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_shape_reservation"
+                    android:layout_alignParentBottom="true"
+                    android:text="예 약 하 기"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</FrameLayout>

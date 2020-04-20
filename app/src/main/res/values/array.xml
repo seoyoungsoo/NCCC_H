@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city">
+        <item>전체</item>
+        <item>나트랑</item>
+        <item>다낭</item>
+        <item>달랏</item>
+        <item>하노이</item>
+        <item>호이안</item>
+        <item>호치민</item>
+    </string-array>
+    
+    <string-array name="type">
+        <item>전체 이용후기</item>
+        <item>그룹/단체 여행객</item>
+        <item>나홀로 여행객</item>
+        <item>유아/아동 동반 가족 여행객</item>
+        <item>청소년 동반 가족 여행객</item>
+        <item>출장 여행객</item>
+        <item>커플/2인 여행객</item>
+    </string-array>
+
+    <string-array name="value">
+        <item>상관없음</item>
+        <item>50000원 미만</item>
+        <item>50000원 이상 ~ 100000원 미만</item>
+        <item>1000000원 이상</item>
+    </string-array>
+</resources>
