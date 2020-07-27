@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="bottom"
+    android:id="@+id/background"
+    android:background="#80404040">
+
+    <FrameLayout
+        android:id="@+id/sub_background"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@xml/login_background"
+        android:backgroundTint="#ffffff"
+        tools:ignore="MissingConstraints">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/back" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="호텔 평가하기"
+                    android:textColor="#000000"
+                    android:textSize="30dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="방문 유/무"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <CheckBox
+                        android:id="@+id/hotel_evaluation_checkbox"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/checkbox_1"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hotel_evaluation_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="5dp"
+                        android:src="@drawable/divide_bar"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="숙소 청결 상태"/>
+
+                        <SeekBar
+                            android:id="@+id/hotel_evaluation_seekbar1"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hotel_evaluation_value1"
+                            android:layout_gravity="center"
+                            android:thumb="@drawable/seekbar_thumb"
+                            android:progressDrawable="@drawable/seekbar"/>
+
+                        <TextView
+                            android:id="@+id/hotel_evaluation_value1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#000000"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="부대시설"/>
+
+                        <SeekBar
+                            android:id="@+id/hotel_evaluation_seekbar2"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hotel_evaluation_value2"
+                            android:layout_gravity="center"
+                            android:thumb="@drawable/seekbar_thumb"
+                            android:progressDrawable="@drawable/seekbar"/>
+
+                        <TextView
+                            android:id="@+id/hotel_evaluation_value2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#000000"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="위치"/>
+
+                        <SeekBar
+                            android:id="@+id/hotel_evaluation_seekbar3"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hotel_evaluation_value3"
+                            android:layout_gravity="center"
+                            android:thumb="@drawable/seekbar_thumb"
+                            android:progressDrawable="@drawable/seekbar"/>
+
+                        <TextView
+                            android:id="@+id/hotel_evaluation_value3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#000000"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="서비스"/>
+
+                        <SeekBar
+                            android:id="@+id/hotel_evaluation_seekbar4"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hotel_evaluation_value4"
+                            android:layout_gravity="center"
+                            android:thumb="@drawable/seekbar_thumb"
+                            android:progressDrawable="@drawable/seekbar"/>
+
+                        <TextView
+                            android:id="@+id/hotel_evaluation_value4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#000000"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="가격 대비 만족도"/>
+
+                        <SeekBar
+                            android:id="@+id/hotel_evaluation_seekbar5"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hotel_evaluation_value5"
+                            android:layout_gravity="center"
+                            android:thumb="@drawable/seekbar_thumb"
+                            android:progressDrawable="@drawable/seekbar"/>
+
+                        <TextView
+                            android:id="@+id/hotel_evaluation_value5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#000000"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="5dp"
+                        android:src="@drawable/divide_bar"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <RatingBar
+                        android:id="@+id/hotel_evaluation_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="3"
+                        android:stepSize="0.5"
+                        android:isIndicator="false"
+                        android:theme="@style/RatingBar"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="호텔에 대해 평점을 매겨주세요."
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="12dp"/>
+
+                    <Button
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/hotel_evaluation_button"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_shape_reservation"
+                        android:layout_alignParentBottom="true"
+                        android:text="평 가 하 기"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+    </FrameLayout>
+
+</LinearLayout>

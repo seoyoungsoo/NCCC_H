@@ -2,8 +2,10 @@
 <resources>
     <color name="colorPrimary">#E91E1E</color>
     <color name="colorPrimaryDark">#E91E1E</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="button1">#FF7373</color>
+    <color name="colorAccent">#FF7373</color>
+    <color name="button1">#F85B5B</color>
     <color name="white">#f9f9f9</color>
     <color name="gray">#CDCDCD</color>
+    <color name="colorProgress">#E91E1E</color>
+    <color name="duskYellow">#FFC107</color>
 </resources>

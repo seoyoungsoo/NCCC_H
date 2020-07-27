@@ -26,4 +26,9 @@
         <item>50000원 이상 ~ 100000원 미만</item>
         <item>1000000원 이상</item>
     </string-array>
+
+    <string-array name="seekbarvalue">
+        <item>0</item>
+        <item>200</item>
+    </string-array>
 </resources>

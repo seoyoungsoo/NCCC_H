@@ -8,6 +8,6 @@
         android:width="1dp"
         android:color="@color/button1"/>
 
-    <corners android:radius="10dp"/>
+    <corners android:radius="3dp"/>
 
 </shape>

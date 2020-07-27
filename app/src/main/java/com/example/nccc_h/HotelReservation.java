@@ -2,47 +2,54 @@ package com.example.nccc_h;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.jaygoo.widget.RangeSeekBar;
 
 import java.util.ArrayList;
 
 public class HotelReservation extends AppCompatActivity {
 
-    private Spinner spinner_city;
-    private Spinner spinner_type;
-    private Spinner spinner_value;
+    Spinner spinCity;
+    Spinner spinType;
 
-    ArrayList<String> arrayListCity;
-    ArrayList<String> arrayListType;
-    ArrayList<String> arrayListValue;
+    RangeSeekBar rangeSeekBar;
 
-    ArrayAdapter<String> arrayAdapterCity;
-    ArrayAdapter<String> arrayAdapterType;
-    ArrayAdapter<String> arrayAdapterValue;
+    Button searchBtn;
+    Button cancelBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_reservation);
 
-        SetSpinner();
+        setFirst();
     }
 
-    private void SetSpinner() {
-        arrayAdapterCity = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_dropdown_item, arrayListCity);
-        spinner_city = (Spinner)findViewById(R.id.hotel_reservation_city);
-        spinner_city.setAdapter(arrayAdapterCity);
-        spinner_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+    private void setFirst() {
+        searchBtn = (Button) findViewById(R.id.hotel_reservation_search);
+        cancelBtn = (Button) findViewById(R.id.hotel_reservation_cancel);
+
+        spinCity = (Spinner) findViewById(R.id.hotel_reservation_city);
+
+        ArrayAdapter cityAdapter = ArrayAdapter.createFromResource(this, R.array.city,
+                android.R.layout.simple_spinner_dropdown_item);
+        cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinCity.setAdapter(cityAdapter);
+
+        spinCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), arrayListCity.get(position)+"가 선택됐습니다.",
-                        Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -51,15 +58,17 @@ public class HotelReservation extends AppCompatActivity {
             }
         });
 
-        arrayAdapterType = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_dropdown_item, arrayListType);
-        spinner_type = (Spinner)findViewById(R.id.hotel_reservation_type);
-        spinner_type.setAdapter(arrayAdapterType);
-        spinner_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinType = (Spinner) findViewById(R.id.hotel_reservation_type);
+
+        ArrayAdapter typeAdapter = ArrayAdapter.createFromResource(this, R.array.type,
+                android.R.layout.simple_spinner_dropdown_item);
+        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinType.setAdapter(typeAdapter);
+
+        spinType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), arrayListType.get(position)+"가 선택됐습니다.",
-                        Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -68,21 +77,24 @@ public class HotelReservation extends AppCompatActivity {
             }
         });
 
-        arrayAdapterValue = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_dropdown_item, arrayListValue);
-        spinner_value = (Spinner)findViewById(R.id.hotel_reservation_value);
-        spinner_value.setAdapter(arrayAdapterValue);
-        spinner_value.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        cancelBtn = (Button) findViewById(R.id.hotel_reservation_cancel);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), arrayListValue.get(position)+"가 선택됐습니다.",
-                        Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                finish();
             }
+        });
 
+        searchBtn = (Button) findViewById(R.id.hotel_reservation_search);
+        searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HotelRecommendListview.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
+
+
 }

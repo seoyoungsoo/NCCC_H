@@ -12,7 +12,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <include
@@ -53,9 +53,10 @@
                         <TextView
                             android:id="@+id/hotel_detail_title"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="호텔 이름"
-                            android:textColor="#292929"/>
+                            android:textColor="#292929"
+                            android:gravity="center_vertical"/>
                     </RelativeLayout>
 
                 </LinearLayout>
@@ -118,34 +119,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="20dp"
                 android:src="@drawable/detail_bar">
                 <RelativeLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/like"
-                        android:layout_width="23dp"
-                        android:layout_height="23dp"
+                    <Button
+                        android:id="@+id/hotel_detail_evaluation"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_marginRight="7dp"
-                        android:src="@drawable/like" />
-
-                    <ImageView
-                        android:id="@+id/hate"
-                        android:layout_width="23dp"
-                        android:layout_height="23dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="13dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_toStartOf="@+id/like"
-                        android:layout_toLeftOf="@+id/like"
-                        android:src="@drawable/hate" />
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginRight="9dp"
+                        android:background="@color/button1"
+                        android:text="호텔평가"
+                        android:textColor="@color/white" />
                 </RelativeLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -446,7 +438,7 @@
                                         android:layout_marginTop="10dp">
 
                                         <TextView
-                                            android:id="@+id/hotel_detail_Tourdest"
+                                            android:id="@+id/hotel_detail_Tourlist"
                                             android:layout_width="match_parent"
                                             android:layout_height="100dp"
                                             android:text="관광지 내용 호이안 호치민 하노이 달랏 나트랑 다낭 등 등 등 등 등 등 등 등" />

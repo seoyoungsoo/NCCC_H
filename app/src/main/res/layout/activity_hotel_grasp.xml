@@ -1,9 +1,325 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HotelGrasp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:background="#F3F3F3">
+
+            <include
+                layout="@layout/hotel_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/grasp_background"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="취 향 파 악"
+                            android:gravity="center"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="25dp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"/>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:src="@drawable/divide_bar"
+                            android:layout_marginBottom="10dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="5.5"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/option_24dp" />
+
+                                <TextView
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="숙소 청결 상태"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <CheckBox
+                                    android:id="@+id/hotel_grasp_box1"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/checkbox_1"
+                                    android:button="@android:color/transparent"
+                                    android:gravity="right" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/option_24dp" />
+
+                                <TextView
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="부대시설"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <CheckBox
+                                    android:id="@+id/hotel_grasp_box2"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:gravity="right"
+                                    android:button="@android:color/transparent"
+                                    android:background="@drawable/checkbox_1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/option_24dp" />
+
+                                <TextView
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <CheckBox
+                                    android:id="@+id/hotel_grasp_box3"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:gravity="right"
+                                    android:button="@android:color/transparent"
+                                    android:background="@drawable/checkbox_1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/option_24dp" />
+
+                                <TextView
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="서비스"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <CheckBox
+                                    android:id="@+id/hotel_grasp_box4"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:gravity="right"
+                                    android:button="@android:color/transparent"
+                                    android:background="@drawable/checkbox_1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/option_24dp" />
+
+                                <TextView
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="가격 대비 만족도"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <CheckBox
+                                    android:id="@+id/hotel_grasp_box5"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:gravity="right"
+                                    android:button="@android:color/transparent"
+                                    android:background="@drawable/checkbox_1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.5"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="중요하게 생각하는 항목 최대 3가지를 선택해주세요."
+                                    android:gravity="center"
+                                    android:textSize="12dp"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:weightSum="2.2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.2">
+
+                                <TextView
+                                    android:layout_gravity="bottom"
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="선호하는 가격대를 설정해주세요."
+                                    android:textSize="12dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <com.jaygoo.widget.RangeSeekBar
+                                    android:id="@+id/hotel_grasp_seekbar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:rsb_max="200"
+                                    app:rsb_mode="range"
+                                    app:rsb_tick_mark_layout_gravity="bottom"
+                                    app:rsb_tick_mark_text_margin="10dp"
+                                    app:rsb_progress_color="@color/colorProgress"
+                                    app:rsb_min_interval="50"
+                                    app:rsb_thumb_drawable="@drawable/thumb_yellow_stroke"
+                                    app:rsb_indicator_show_mode="alwaysShow"
+                                    app:rsb_indicator_height="25dp"
+                                    app:rsb_indicator_width="40dp"
+                                    app:rsb_indicator_margin="5dp"
+                                    app:rsb_indicator_background_color="@color/colorProgress"
+                                    app:rsb_tick_mark_mode="number"
+                                    app:rsb_tick_mark_text_array="@array/seekbarvalue" />
+
+                                <TextView
+                                    android:layout_gravity="bottom"
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="단위 만(원)"
+                                    android:textSize="10dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="15dp"
+                                android:weightSum="2">
+
+                                <Button
+                                    android:id="@+id/hotel_grasp_exit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="10dp"
+                                    android:text="종 료"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:background="@drawable/button_shape_cancel"/>
+
+                                <Button
+                                    android:id="@+id/hotel_grasp_start"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/button_shape_search"
+                                    android:text="튜토리얼 시작"
+                                    android:textColor="@color/white"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+</FrameLayout>

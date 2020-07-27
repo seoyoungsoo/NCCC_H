@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class HotelRecommendListview extends AppCompatActivity {
     private class ViewHolder {
         public ImageView hrImg;
         public TextView hrTitle;
-        public TextView hrValue;
+        public RatingBar hrRating;
     }
 
     private class RecommendAdapter extends BaseAdapter {
@@ -72,7 +73,7 @@ public class HotelRecommendListview extends AppCompatActivity {
 
                 holder.hrImg = (ImageView) convertView.findViewById(R.id.hotel_recommend_img);
                 holder.hrTitle = (TextView) convertView.findViewById(R.id.hotel_recommend_title);
-                holder.hrValue = (TextView) convertView.findViewById(R.id.hotel_recommend_value);
+                holder.hrRating = (RatingBar) convertView.findViewById(R.id.hotel_recommend_rating);
 
                 convertView.setTag(holder);
             } else {
@@ -89,7 +90,6 @@ public class HotelRecommendListview extends AppCompatActivity {
             }
 
             holder.hrTitle.setText(recomData.getRecom_title());
-            holder.hrValue.setText(recomData.getRecom_value());
 
             return convertView;
         }
