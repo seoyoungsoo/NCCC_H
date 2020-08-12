@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -22,54 +23,95 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class HotelGrasp extends AppCompatActivity {
-
     CheckBox grspBox1;
     CheckBox grspBox2;
     CheckBox grspBox3;
     CheckBox grspBox4;
     CheckBox grspBox5;
 
+    int score1 = 0;
+    int score2 = 0;
+    int score3 = 0;
+    int score4 = 0;
+    int score5 = 0;
+
+    int minT;
+    int maxT;
+
+    String min;
+    String max;
+
     Button grspStart;
     Button grspExit;
 
-    //시크바 추가
+    EditText minPrice;
+    EditText maxPrice;
 
-    GraspTask graspTask;
+    GraspTask graspTask = new GraspTask();
 
-    int i = 0;
+    Boolean insertDB = true;
+
+    static int i = 0;
+
+    String result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_grasp);
 
-        final String userID = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
-
         this.setFirst();
         this.setBoxClickListener();
+
+        final String userID = getDeviceId();
 
         grspStart.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if (i == 0) {
-                    Toast.makeText(getApplicationContext(), "최소 1가지의 항목을 선택해야 합니다..",
-                            Toast.LENGTH_SHORT).show();
+                if (i == 0 ) {
+                    Toast.makeText(getApplicationContext(), "최소 1가지의 항목을 선택해야 합니다..", Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent intent = new Intent(getApplicationContext(), HotelTutorial.class);
-                    startActivity(intent);
-                    finish();
-                }
-                try {
-                    String result;
-                    graspTask = new GraspTask();
-                    result = graspTask.execute(userID).get();
-                    Log.i("리턴 값", result);
-                } catch (Exception e) {
+                    if (minPrice.getText().toString().equals("") || maxPrice.getText().toString().equals("")) {
+                        Toast.makeText(getApplicationContext(), "가격을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        minT = Integer.parseInt(minPrice.getText().toString());
+                        maxT = Integer.parseInt(maxPrice.getText().toString());
+
+                        if (minT > maxT || minT < 0 || minT > 2000000 || maxT < 0 || maxT > 2000000) {
+                            Toast.makeText(getApplicationContext(), "범위에 맞는 가격을 다시 입력해주세요.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            min = minPrice.getText().toString();
+                            max = maxPrice.getText().toString();
+
+                            try {
+                                result = graspTask.execute(userID).get();
+                                if (result.equals("S")) {
+                                    Log.i("hihi", "ssssss");
+                                    insertDB = false;
+                                }
+                            } catch (Exception e) {
+                                Log.i("hihi", ""+e);
+                            }
+                            while (insertDB);
+                            Intent i = new Intent(getApplicationContext(), HotelTutorial.class);
+                            i.putExtra("min", min);
+                            i.putExtra("max", max);
+                            i.putExtra("userID", userID);
+                            startActivity(i);
+                            finish();
+                        }
+                    }
                 }
             }
         });
 
 
+    }
+
+    public String getDeviceId() {
+        String userId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        return userId;
     }
 
     public void setBoxClickListener() {
@@ -83,9 +125,11 @@ public class HotelGrasp extends AppCompatActivity {
                         grspBox1.setChecked(false);
                     } else if (i < 3) {
                         i++;
+                        score1++;
                     }
                 } else if (grspBox1.isChecked() == false) {
                     i--;
+                    score1--;
                 }
             }
         });
@@ -100,9 +144,11 @@ public class HotelGrasp extends AppCompatActivity {
                         grspBox2.setChecked(false);
                     } else if (i < 3) {
                         i++;
+                        score2++;
                     }
                 } else if (grspBox2.isChecked() == false) {
                     i--;
+                    score2--;
                 }
             }
         });
@@ -117,9 +163,11 @@ public class HotelGrasp extends AppCompatActivity {
                         grspBox3.setChecked(false);
                     } else if (i < 3) {
                         i++;
+                        score3++;
                     }
                 } else if (grspBox3.isChecked() == false) {
                     i--;
+                    score3--;
                 }
             }
         });
@@ -134,9 +182,11 @@ public class HotelGrasp extends AppCompatActivity {
                         grspBox4.setChecked(false);
                     } else if (i < 3) {
                         i++;
+                        score4++;
                     }
                 } else if (grspBox4.isChecked() == false) {
                     i--;
+                    score4--;
                 }
             }
         });
@@ -151,9 +201,11 @@ public class HotelGrasp extends AppCompatActivity {
                         grspBox5.setChecked(false);
                     } else if (i < 3) {
                         i++;
+                        score5++;
                     }
                 } else if (grspBox5.isChecked() == false) {
                     i--;
+                    score5--;
                 }
             }
         });
@@ -168,6 +220,9 @@ public class HotelGrasp extends AppCompatActivity {
 
         grspStart = (Button) findViewById(R.id.hotel_grasp_start);
         grspExit = (Button) findViewById(R.id.hotel_grasp_exit);
+
+        minPrice = (EditText) findViewById(R.id.grasp_min_price);
+        maxPrice = (EditText) findViewById(R.id.grasp_max_price);
 
         /*grspStart.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -199,14 +254,14 @@ public class HotelGrasp extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             try {
                 String str;
-                URL url = new URL("");
+                URL url = new URL("http://222.116.135.77:8080/NCCC_H/insertuser.jsp");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("Content-Type", "apllication/x-www-form-urlencoded");
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 conn.setRequestMethod("POST");
 
                 OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
 
-                sendMsg = "userid="+strings[0];
+                sendMsg = "userid="+strings[0]+"&score1="+score1+"&score2="+score2+"&score3="+score3+"&score4="+score4+"&score5="+score5+"&min="+min+"&max="+max;
                 osw.write(sendMsg);
                 osw.flush();
 

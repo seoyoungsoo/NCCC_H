@@ -8,4 +8,5 @@
     <color name="gray">#CDCDCD</color>
     <color name="colorProgress">#E91E1E</color>
     <color name="duskYellow">#FFC107</color>
+    <color name="textBlack">#252525</color>
 </resources>

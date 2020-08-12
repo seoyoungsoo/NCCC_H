@@ -48,14 +48,15 @@
 
         </LinearLayout>
 
-        <ViewFlipper
-            android:id="@+id/viewFlipper1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@+id/tut_lay1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -73,12 +74,13 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -92,12 +94,13 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -148,7 +151,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip1"
+                                    android:id="@+id/hotel_tutorial_progress1_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -160,7 +163,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip1"
+                                    android:id="@+id/tutorial_value1_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -187,7 +190,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip1"
+                                    android:id="@+id/hotel_tutorial_progress2_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -199,7 +202,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip1"
+                                    android:id="@+id/tutorial_value2_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -227,7 +230,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip1"
+                                    android:id="@+id/hotel_tutorial_progress3_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -239,7 +242,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip1"
+                                    android:id="@+id/tutorial_value3_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -267,7 +270,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip1"
+                                    android:id="@+id/hotel_tutorial_progress4_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -279,7 +282,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip1"
+                                    android:id="@+id/tutorial_value4_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -307,7 +310,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip1"
+                                    android:id="@+id/hotel_tutorial_progress5_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -319,7 +322,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip1"
+                                    android:id="@+id/tutorial_value5_lay1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -338,7 +341,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -346,14 +349,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip1"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay1"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -366,10 +378,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip1"
+                                    android:id="@+id/hotel_tutorial_rating_lay1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -390,6 +403,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -414,9 +434,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip2"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -433,9 +453,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip2"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -486,7 +506,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip2"
+                                    android:id="@+id/hotel_tutorial_progress1_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -498,7 +518,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip2"
+                                    android:id="@+id/tutorial_value1_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -525,7 +545,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip2"
+                                    android:id="@+id/hotel_tutorial_progress2_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -537,7 +557,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip2"
+                                    android:id="@+id/tutorial_value2_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -565,7 +585,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip2"
+                                    android:id="@+id/hotel_tutorial_progress3_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -577,7 +597,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip2"
+                                    android:id="@+id/tutorial_value3_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -605,7 +625,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip2"
+                                    android:id="@+id/hotel_tutorial_progress4_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -617,7 +637,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip2"
+                                    android:id="@+id/tutorial_value4_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -645,7 +665,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip2"
+                                    android:id="@+id/hotel_tutorial_progress5_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -657,7 +677,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip2"
+                                    android:id="@+id/tutorial_value5_lay2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -676,7 +696,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -684,14 +704,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip2"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay2"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -704,10 +733,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip2"
+                                    android:id="@+id/hotel_tutorial_rating_lay2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -728,6 +758,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -752,9 +789,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip3"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -771,9 +808,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip3"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -824,7 +861,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip3"
+                                    android:id="@+id/hotel_tutorial_progress1_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -836,7 +873,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip3"
+                                    android:id="@+id/tutorial_value1_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -863,7 +900,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip3"
+                                    android:id="@+id/hotel_tutorial_progress2_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -875,7 +912,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip3"
+                                    android:id="@+id/tutorial_value2_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -903,7 +940,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip3"
+                                    android:id="@+id/hotel_tutorial_progress3_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -915,7 +952,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip3"
+                                    android:id="@+id/tutorial_value3_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -943,7 +980,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip3"
+                                    android:id="@+id/hotel_tutorial_progress4_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -955,7 +992,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip3"
+                                    android:id="@+id/tutorial_value4_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -983,7 +1020,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip3"
+                                    android:id="@+id/hotel_tutorial_progress5_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -995,7 +1032,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip3"
+                                    android:id="@+id/tutorial_value5_lay3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1014,7 +1051,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -1022,14 +1059,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip3"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay3"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -1042,10 +1088,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip3"
+                                    android:id="@+id/hotel_tutorial_rating_lay3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -1066,6 +1113,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -1090,9 +1144,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -1109,9 +1163,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -1162,7 +1216,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip4"
+                                    android:id="@+id/hotel_tutorial_progress1_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1174,7 +1228,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip4"
+                                    android:id="@+id/tutorial_value1_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1201,7 +1255,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip4"
+                                    android:id="@+id/hotel_tutorial_progress2_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1213,7 +1267,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip4"
+                                    android:id="@+id/tutorial_value2_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1241,7 +1295,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip4"
+                                    android:id="@+id/hotel_tutorial_progress3_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1253,7 +1307,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip4"
+                                    android:id="@+id/tutorial_value3_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -1281,7 +1335,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip4"
+                                    android:id="@+id/hotel_tutorial_progress4_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1293,7 +1347,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip4"
+                                    android:id="@+id/tutorial_value4_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1321,7 +1375,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip4"
+                                    android:id="@+id/hotel_tutorial_progress5_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1333,7 +1387,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip4"
+                                    android:id="@+id/tutorial_value5_lay4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1352,7 +1406,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -1360,14 +1414,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip4"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay4"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -1380,10 +1443,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip4"
+                                    android:id="@+id/hotel_tutorial_rating_lay4"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -1404,6 +1468,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -1428,9 +1499,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip5"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -1447,9 +1518,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip5"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -1500,7 +1571,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip5"
+                                    android:id="@+id/hotel_tutorial_progress1_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1512,7 +1583,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip5"
+                                    android:id="@+id/tutorial_value1_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1539,7 +1610,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip5"
+                                    android:id="@+id/hotel_tutorial_progress2_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1551,7 +1622,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip5"
+                                    android:id="@+id/tutorial_value2_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1579,7 +1650,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip5"
+                                    android:id="@+id/hotel_tutorial_progress3_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1591,7 +1662,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip5"
+                                    android:id="@+id/tutorial_value3_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -1619,7 +1690,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip5"
+                                    android:id="@+id/hotel_tutorial_progress4_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1631,7 +1702,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip5"
+                                    android:id="@+id/tutorial_value4_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1659,7 +1730,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip5"
+                                    android:id="@+id/hotel_tutorial_progress5_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1671,7 +1742,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip5"
+                                    android:id="@+id/tutorial_value5_lay5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1690,7 +1761,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -1698,14 +1769,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip5"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay5"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -1718,10 +1798,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip5"
+                                    android:id="@+id/hotel_tutorial_rating_lay5"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -1742,6 +1823,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -1766,9 +1854,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip6"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -1785,9 +1873,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip6"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -1838,7 +1926,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip6"
+                                    android:id="@+id/hotel_tutorial_progress1_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1850,7 +1938,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip6"
+                                    android:id="@+id/tutorial_value1_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1877,7 +1965,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip6"
+                                    android:id="@+id/hotel_tutorial_progress2_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1889,7 +1977,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip6"
+                                    android:id="@+id/tutorial_value2_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1917,7 +2005,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip6"
+                                    android:id="@+id/hotel_tutorial_progress3_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1929,7 +2017,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip6"
+                                    android:id="@+id/tutorial_value3_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -1957,7 +2045,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip6"
+                                    android:id="@+id/hotel_tutorial_progress4_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -1969,7 +2057,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip6"
+                                    android:id="@+id/tutorial_value4_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -1997,7 +2085,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip6"
+                                    android:id="@+id/hotel_tutorial_progress5_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2009,7 +2097,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip6"
+                                    android:id="@+id/tutorial_value5_lay6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2028,7 +2116,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -2036,14 +2124,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip6"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay6"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -2056,10 +2153,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip6"
+                                    android:id="@+id/hotel_tutorial_rating_lay6"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -2080,6 +2178,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -2104,9 +2209,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip7"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -2123,9 +2228,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip7"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -2176,7 +2281,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip7"
+                                    android:id="@+id/hotel_tutorial_progress1_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2188,7 +2293,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip7"
+                                    android:id="@+id/tutorial_value1_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2215,7 +2320,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip7"
+                                    android:id="@+id/hotel_tutorial_progress2_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2227,7 +2332,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip7"
+                                    android:id="@+id/tutorial_value2_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2255,7 +2360,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip7"
+                                    android:id="@+id/hotel_tutorial_progress3_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2267,7 +2372,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip7"
+                                    android:id="@+id/tutorial_value3_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -2295,7 +2400,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip7"
+                                    android:id="@+id/hotel_tutorial_progress4_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2307,7 +2412,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip7"
+                                    android:id="@+id/tutorial_value4_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2335,7 +2440,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip7"
+                                    android:id="@+id/hotel_tutorial_progress5_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2347,7 +2452,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip7"
+                                    android:id="@+id/tutorial_value5_lay7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2366,7 +2471,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -2374,14 +2479,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip7"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay7"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -2394,10 +2508,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip7"
+                                    android:id="@+id/hotel_tutorial_rating_lay7"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -2418,6 +2533,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -2442,9 +2564,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip8"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -2461,9 +2583,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip8"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -2514,7 +2636,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip8"
+                                    android:id="@+id/hotel_tutorial_progress1_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2526,7 +2648,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip8"
+                                    android:id="@+id/tutorial_value1_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2553,7 +2675,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip8"
+                                    android:id="@+id/hotel_tutorial_progress2_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2565,7 +2687,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip8"
+                                    android:id="@+id/tutorial_value2_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2593,7 +2715,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip8"
+                                    android:id="@+id/hotel_tutorial_progress3_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2605,7 +2727,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip8"
+                                    android:id="@+id/tutorial_value3_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -2633,7 +2755,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip8"
+                                    android:id="@+id/hotel_tutorial_progress4_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2645,7 +2767,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip8"
+                                    android:id="@+id/tutorial_value4_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2673,7 +2795,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip8"
+                                    android:id="@+id/hotel_tutorial_progress5_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2685,7 +2807,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip8"
+                                    android:id="@+id/tutorial_value5_lay8"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2704,7 +2826,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -2712,14 +2834,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip8"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay8"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -2732,10 +2863,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip8"
+                                    android:id="@+id/hotel_tutorial_rating_lay8"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -2756,6 +2888,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -2780,9 +2919,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip9"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -2799,9 +2938,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip9"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -2852,7 +2991,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip9"
+                                    android:id="@+id/hotel_tutorial_progress1_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2864,7 +3003,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip9"
+                                    android:id="@+id/tutorial_value1_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2891,7 +3030,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip9"
+                                    android:id="@+id/hotel_tutorial_progress2_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2903,7 +3042,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip9"
+                                    android:id="@+id/tutorial_value2_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -2931,7 +3070,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip9"
+                                    android:id="@+id/hotel_tutorial_progress3_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2943,7 +3082,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip9"
+                                    android:id="@+id/tutorial_value3_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -2971,7 +3110,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip9"
+                                    android:id="@+id/hotel_tutorial_progress4_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -2983,7 +3122,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip9"
+                                    android:id="@+id/tutorial_value4_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3011,7 +3150,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip9"
+                                    android:id="@+id/hotel_tutorial_progress5_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3023,7 +3162,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip9"
+                                    android:id="@+id/tutorial_value5_lay9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3042,7 +3181,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -3050,14 +3189,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip9"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay9"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -3070,10 +3218,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip9"
+                                    android:id="@+id/hotel_tutorial_rating_lay9"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -3094,6 +3243,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -3118,9 +3274,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip10"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -3137,9 +3293,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip10"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -3190,7 +3346,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip10"
+                                    android:id="@+id/hotel_tutorial_progress1_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3202,7 +3358,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip10"
+                                    android:id="@+id/tutorial_value1_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3229,7 +3385,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip10"
+                                    android:id="@+id/hotel_tutorial_progress2_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3241,7 +3397,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip10"
+                                    android:id="@+id/tutorial_value2_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3269,7 +3425,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip10"
+                                    android:id="@+id/hotel_tutorial_progress3_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3281,7 +3437,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip10"
+                                    android:id="@+id/tutorial_value3_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -3309,7 +3465,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip10"
+                                    android:id="@+id/hotel_tutorial_progress4_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3321,7 +3477,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip10"
+                                    android:id="@+id/tutorial_value4_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3349,7 +3505,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip10"
+                                    android:id="@+id/hotel_tutorial_progress5_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3361,7 +3517,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip10"
+                                    android:id="@+id/tutorial_value5_lay10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3380,7 +3536,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -3388,14 +3544,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip10"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay10"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -3408,10 +3573,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip10"
+                                    android:id="@+id/hotel_tutorial_rating_lay10"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -3432,6 +3598,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -3456,9 +3629,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip11"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -3475,9 +3648,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip11"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -3528,7 +3701,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip11"
+                                    android:id="@+id/hotel_tutorial_progress1_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3540,7 +3713,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip11"
+                                    android:id="@+id/tutorial_value1_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3567,7 +3740,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip11"
+                                    android:id="@+id/hotel_tutorial_progress2_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3579,7 +3752,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip11"
+                                    android:id="@+id/tutorial_value2_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3607,7 +3780,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip11"
+                                    android:id="@+id/hotel_tutorial_progress3_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3619,7 +3792,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip11"
+                                    android:id="@+id/tutorial_value3_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -3647,7 +3820,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip11"
+                                    android:id="@+id/hotel_tutorial_progress4_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3659,7 +3832,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip11"
+                                    android:id="@+id/tutorial_value4_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3687,7 +3860,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip11"
+                                    android:id="@+id/hotel_tutorial_progress5_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3699,7 +3872,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip11"
+                                    android:id="@+id/tutorial_value5_lay11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3718,7 +3891,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -3726,14 +3899,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip11"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay11"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -3746,10 +3928,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip11"
+                                    android:id="@+id/hotel_tutorial_rating_lay11"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -3770,6 +3953,13 @@
 
 
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tut_lay12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -3794,9 +3984,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img1_flip12"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img1_lay12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginRight="5dp"
@@ -3813,9 +4003,9 @@
                             android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/hotel_tutorial_img2_flip12"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:id="@+id/hotel_tutorial_img2_lay12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="9dp"
                                 android:layout_marginBottom="9dp"
                                 android:adjustViewBounds="false"
@@ -3866,7 +4056,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress1_flip12"
+                                    android:id="@+id/hotel_tutorial_progress1_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3878,7 +4068,7 @@
                                     android:layout_weight="3" />
 
                                 <TextView
-                                    android:id="@+id/tutorial_value1_flip12"
+                                    android:id="@+id/tutorial_value1_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3905,7 +4095,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress2_flip12"
+                                    android:id="@+id/hotel_tutorial_progress2_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3917,7 +4107,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value2_flip12"
+                                    android:id="@+id/tutorial_value2_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -3945,7 +4135,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress3_flip12"
+                                    android:id="@+id/hotel_tutorial_progress3_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3957,7 +4147,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value3_flip12"
+                                    android:id="@+id/tutorial_value3_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="4.5"
@@ -3985,7 +4175,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress4_flip12"
+                                    android:id="@+id/hotel_tutorial_progress4_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -3997,7 +4187,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value4_flip12"
+                                    android:id="@+id/tutorial_value4_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -4025,7 +4215,7 @@
 
 
                                 <ProgressBar
-                                    android:id="@+id/hotel_tutorial_progress5_flip12"
+                                    android:id="@+id/hotel_tutorial_progress5_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
@@ -4037,7 +4227,7 @@
                                     android:layout_weight="3"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value5_flip12"
+                                    android:id="@+id/tutorial_value5_lay12"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="10.0"
@@ -4056,7 +4246,7 @@
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="평균 가격"
                                     android:layout_weight="3"
@@ -4064,14 +4254,23 @@
                                     android:textSize="20dp"/>
 
                                 <TextView
-                                    android:id="@+id/tutorial_value6_flip12"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/tutorial_value6_lay12"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:textStyle="bold"
-                                    android:layout_weight="2"
-                                    android:gravity="right"
+                                    android:layout_weight="1.6"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0.4"
+                                    android:gravity="center_horizontal"
                                     android:layout_marginEnd="9dp"
                                     android:layout_marginRight="9dp"/>
                             </LinearLayout>
@@ -4084,10 +4283,11 @@
                                 android:orientation="vertical">
 
                                 <RatingBar
-                                    android:id="@+id/hotel_tutorial_rating_flip12"
+                                    android:id="@+id/hotel_tutorial_rating_lay12"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:numStars="5"
+                                    android:max="5"
                                     android:rating="3"
                                     android:stepSize="0.5"
                                     android:isIndicator="false"
@@ -4108,8 +4308,7 @@
 
 
             </LinearLayout>
-
-        </ViewFlipper>
+        </FrameLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -4119,7 +4318,7 @@
             android:layout_marginRight="20dp"
             android:gravity="end">
 
-            <Button
+            <!--<Button
                 android:id="@+id/tutorial_back"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
@@ -4128,7 +4327,7 @@
                 android:textColor="@color/white"
                 android:textSize="17dp"
                 android:textStyle="bold"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="20dp"/>-->
 
             <Button
                 android:id="@+id/tutorial_next"

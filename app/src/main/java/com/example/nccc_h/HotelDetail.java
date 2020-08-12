@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -81,6 +82,7 @@ public class HotelDetail extends AppCompatActivity {
     FrameLayout subBackGround;
 
     Boolean inflateView = false;
+    Boolean evalCont = false; // 평가 유무확인 true면 평가한 것
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +90,173 @@ public class HotelDetail extends AppCompatActivity {
         setContentView(R.layout.activity_hotel_detail);
 
         this.setFirst();
-        this.setEval();
+        this.evalHotel();
         this.setBack();
 
+    }
 
+    public void evalHotel() {
+        htlEval.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (evalCont) {
+                    Toast.makeText(getApplicationContext(), "이미 평가한 호텔입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    setEvaluation();
+                    setEval();
+
+                    htlEval_Eval.setOnClickListener(new View.OnClickListener() { //평가하기 버튼
+                        @Override
+                        public void onClick(View v) {
+                            evalCont = true;
+
+                            //Asynctask 연동
+
+                            Toast.makeText(getApplicationContext(), "평가됐습니다.", Toast.LENGTH_SHORT).show();
+
+                            ViewGroup pvGroup = (ViewGroup) linearEvaluation.getParent();
+                            pvGroup.removeView(linearEvaluation);
+                            inflateView = false;
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    public void setEval() {
+        setSeekBarMax(evalSeek1, max);
+        evalSeek1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setSeekBarChange(progress, evalValue1);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        setSeekBarMax(evalSeek2, max);
+        evalSeek2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setSeekBarChange(progress, evalValue2);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        setSeekBarMax(evalSeek3, max);
+        evalSeek3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setSeekBarChange(progress, evalValue3);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        setSeekBarMax(evalSeek4, max);
+        evalSeek4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setSeekBarChange(progress, evalValue4);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        setSeekBarMax(evalSeek5, max);
+        evalSeek5.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setSeekBarChange(progress, evalValue5);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        linearEvaluation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        subBackGround.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup parentViewGroup = (ViewGroup) linearEvaluation.getParent();
+                parentViewGroup.removeView(linearEvaluation);
+            }
+        });
+
+        backGround.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup parentViewGroup = (ViewGroup) linearEvaluation.getParent();
+                parentViewGroup.removeView(linearEvaluation);
+            }
+        });
+
+        evalBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup parentViewGroup = (ViewGroup) linearEvaluation.getParent();
+                parentViewGroup.removeView(linearEvaluation);
+            }
+        });
+
+        evalVisited.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (evalVisited.isChecked() == false) {
+                    evalVisible.setVisibility(View.GONE);
+                } else if (evalVisited.isChecked() == true) {
+                    evalVisible.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     public void setFirst() {
@@ -128,7 +293,7 @@ public class HotelDetail extends AppCompatActivity {
         });
     }
 
-    public void setEval() {
+    /*public void setEval() {
         htlEval.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -265,11 +430,11 @@ public class HotelDetail extends AppCompatActivity {
                         }
                     }
                 });
-
             }
 
         });
-    }
+
+    }*/
 
     public void setEvaluation() {
         inflateView = true;

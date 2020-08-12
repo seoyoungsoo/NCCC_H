@@ -7,7 +7,8 @@
     android:orientation="vertical"
     tools:context=".SplashActivity">
 
-    <ImageView
+    <FrameLayout
+        android:id="@+id/splashlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/splash1"/>

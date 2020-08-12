@@ -1,17 +1,29 @@
 package com.example.nccc_h;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -19,48 +31,41 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 public class SplashActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 1000;
-    int year,month,day,hour,minute;
     boolean isFirst;
     boolean firstCheck = true;
-    FirstUserCheck firstUserCheck;
 
     Handler handler = new Handler();
+    FirstUserCheck firstUserCheck = new FirstUserCheck();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        //   ActivityCompat.requestPermissions(SplashActivity.this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},0);
-        GregorianCalendar calendar = new GregorianCalendar();
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH);
-        day= calendar.get(Calendar.DAY_OF_MONTH);
-        hour = calendar.get(Calendar.HOUR_OF_DAY);
-        minute = calendar.get(Calendar.MINUTE);
 
-        firstUserCheck = new FirstUserCheck();
-
-        final String userID = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
+        final String userID = getDeviceId();
         String result;
 
-        try{
+        try {
             result = firstUserCheck.execute(userID).get();
             if(result.equals("N")){
-                Log.i("hihi","nnnnnnnnnnnnnnnnnnnnn");
+                Log.i("hihi", "nnnnnnnnnnnnnnnnnnnnn");
                 isFirst = true;
             } else if(result.equals("Y")){
-                Log.i("hihi","yyyyyyyyyyyyyyyyyyyyy");
+                Log.i("hihi", "yyyyyyyyyyyyyyyyyyyyy");
                 isFirst = false;
             } else {
-                Log.i("hihi",""+result);
+                Log.i("hihi", ""+result);
             }
             firstCheck = false;
         } catch (Exception e){
-            Log.i("hihi", ""+e);
+            e.printStackTrace();
         }
 
         handler.postDelayed(new Runnable() {
@@ -68,7 +73,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 while(firstCheck);
                 if(isFirst){
-                    Intent intent = new Intent(getApplicationContext(), HotelGrasp.class);
+                    Intent intent = new Intent(SplashActivity.this, HotelGrasp.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -78,11 +83,13 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         }, SPLASH_TIME_OUT);
+
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public String getDeviceId() {
+        String userId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        return userId;
     }
 
     class FirstUserCheck extends AsyncTask<String, Void, String> {
@@ -95,29 +102,29 @@ public class SplashActivity extends AppCompatActivity {
                 String str;
                 URL url = new URL("http://222.116.135.77:8080/NCCC_H/firstusercheck.jsp");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("Content-Type", "apllication/x-www-form-urlencoded");
                 conn.setRequestMethod("POST");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
                 OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
 
-                //전송할 데이터. GET 방식으로 작성
-                sendMsg = "userid="+strings[0];
+                //GET 방식으로 작성
+                sendMsg = "userid=" + strings[0];
                 osw.write(sendMsg);
                 osw.flush();
 
-                //jsp와 통신 성공 시 수행
-                if(conn.getResponseCode() == conn.HTTP_OK) {
+                if (conn.getResponseCode() == conn.HTTP_OK) {
                     InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
                     BufferedReader reader = new BufferedReader(tmp);
                     StringBuffer buffer = new StringBuffer();
 
                     while ((str = reader.readLine()) != null) {
-                        buffer.append((str));
+                        buffer.append(str);
                     }
                     receiveMsg = buffer.toString();
-
                 } else {
-                    Log.i("통신 결과", conn.getResponseCode()+"에러");
+                    Log.i("통신 결과", conn.getResponseCode() + "에러");
                 }
 
             } catch (MalformedURLException e) {
@@ -128,5 +135,14 @@ public class SplashActivity extends AppCompatActivity {
             //jsp로부터 받은 리턴 값
             return receiveMsg;
         }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        }
     }
+
+
+
 }
+
