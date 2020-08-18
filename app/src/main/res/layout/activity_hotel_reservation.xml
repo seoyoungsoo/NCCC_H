@@ -141,30 +141,58 @@
                             android:src="@drawable/option_24dp" />
 
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="60dp"
                             android:layout_height="wrap_content"
-                            android:text="평균 가격"
+                            android:text="가격"
                             android:textSize="20dp"
                             android:textColor="#140000"
                             android:textStyle="bold"/>
-                        <com.jaygoo.widget.RangeSeekBar
-                            android:id="@+id/hotel_reservation_seekbar"
-                            android:layout_width="match_parent"
+
+                        <EditText
+                            android:id="@+id/reservation_min_price"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
-                            app:rsb_max="200"
-                            app:rsb_mode="range"
-                            app:rsb_tick_mark_layout_gravity="bottom"
-                            app:rsb_tick_mark_text_margin="10dp"
-                            app:rsb_progress_color="@color/colorProgress"
-                            app:rsb_min_interval="50"
-                            app:rsb_thumb_drawable="@drawable/thumb_yellow_stroke"
-                            app:rsb_indicator_show_mode="alwaysShow"
-                            app:rsb_indicator_height="25dp"
-                            app:rsb_indicator_width="40dp"
-                            app:rsb_indicator_margin="5dp"
-                            app:rsb_indicator_background_color="@color/colorProgress"
-                            app:rsb_tick_mark_mode="number"
-                            app:rsb_tick_mark_text_array="@array/seekbarvalue" />
+                            android:inputType="number"
+                            android:digits="0123456789"
+                            android:hint="0"
+                            android:textSize="20dp"
+                            android:maxLength="7"
+                            android:gravity="center_horizontal"
+                            android:background="@android:color/transparent"
+                            android:textColor="@color/textBlack"
+                            android:textCursorDrawable="@drawable/text_cursor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="원 ~"
+                            android:textSize="20dp"
+                            android:textColor="@color/textBlack"/>
+
+                        <EditText
+                            android:id="@+id/reservation_max_price"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:digits="0123456789"
+                            android:hint="2000000"
+                            android:textSize="20dp"
+                            android:maxLength="7"
+                            android:gravity="center_horizontal"
+                            android:layout_marginLeft="3dp"
+                            android:background="@android:color/transparent"
+                            android:textCursorDrawable="@drawable/text_cursor"
+                            android:textColor="@color/textBlack"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="원"
+                            android:textSize="20dp"
+                            android:textColor="@color/textBlack"/>
+
                     </LinearLayout>
 
                     <LinearLayout

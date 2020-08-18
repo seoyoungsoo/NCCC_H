@@ -1,23 +1,24 @@
 package com.example.nccc_h;
 
 import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 
 public class RecomListviewData {
-    private Drawable recom_img;
+    private ImageView recom_img;
     private String recom_title;
     private String recom_value;
 
-    public RecomListviewData(Drawable recom_img, String recom_title, String recom_value) {
+    public RecomListviewData(ImageView recom_img, String recom_title, String recom_value) {
         this.recom_img = recom_img;
         this.recom_title = recom_title;
         this.recom_value = recom_value;
     }
 
-    public Drawable getRecom_img() {
+    public ImageView getRecom_img() {
         return recom_img;
     }
 
-    public void setRecom_img(Drawable recom_img) {
+    public void setRecom_img(ImageView recom_img) {
         this.recom_img = recom_img;
     }
 

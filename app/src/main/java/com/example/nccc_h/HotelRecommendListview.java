@@ -84,7 +84,7 @@ public class HotelRecommendListview extends AppCompatActivity {
 
             if(recomData.getRecom_img() != null) {
                 holder.hrImg.setVisibility(View.VISIBLE);
-                holder.hrImg.setImageDrawable(recomData.getRecom_img());
+                //holder.hrImg.setImageDrawable(recomData.getRecom_img());
             } else {
                 holder.hrImg.setVisibility(View.GONE);
             }

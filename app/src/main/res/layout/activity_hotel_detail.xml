@@ -55,6 +55,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="호텔 이름"
+                            android:singleLine="true"
+                            android:ellipsize="marquee"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
                             android:textColor="#292929"
                             android:gravity="center_vertical"/>
                     </RelativeLayout>
@@ -189,7 +194,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
                             android:orientation="vertical"
                             android:weightSum="5">
@@ -397,25 +402,75 @@
                                     android:id="@+id/hotel_detail_value"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000원"
+                                    android:text="00000"
                                     android:textSize="30dp"
                                     android:gravity="end"
                                     android:layout_weight="1"
                                     android:textStyle="bold"
                                     android:layout_marginRight="9dp"
                                     android:layout_marginEnd="9dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="원"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"
+                                    android:layout_marginEnd="9dp"
+                                    android:layout_marginRight="9dp"/>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical">
+                                android:orientation="horizontal"
+                                android:weightSum="2">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:orientation="vertical"
-                                    android:weightSum="5">
+                                    android:layout_weight="1"
+                                    android:weightSum="5"
+                                    android:layout_marginRight="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:layout_weight="4">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:text="인기 관광지"
+                                            android:textStyle="bold"
+                                            android:background="@color/textViewBack"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:layout_weight="1"
+                                        android:layout_marginTop="3dp">
+
+                                        <TextView
+                                            android:id="@+id/hotel_popular_Tourlist"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="100dp"
+                                            android:text="관광지 내용 호이안 호치민 하노이 달랏 나트랑 다낭 등 등 등 등 등 등 등 등" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:layout_weight="1"
+                                    android:weightSum="5"
+                                    android:layout_marginRight="10dp">
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -427,7 +482,8 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:text="주변 관광지"
-                                            android:textStyle="bold"/>
+                                            android:textStyle="bold"
+                                            android:background="@color/textViewBack"/>
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -435,15 +491,17 @@
                                         android:layout_height="match_parent"
                                         android:orientation="vertical"
                                         android:layout_weight="1"
-                                        android:layout_marginTop="10dp">
+                                        android:layout_marginTop="3dp">
 
                                         <TextView
-                                            android:id="@+id/hotel_detail_Tourlist"
+                                            android:id="@+id/hotel_near_Tourlist"
                                             android:layout_width="match_parent"
                                             android:layout_height="100dp"
                                             android:text="관광지 내용 호이안 호치민 하노이 달랏 나트랑 다낭 등 등 등 등 등 등 등 등" />
                                     </LinearLayout>
                                 </LinearLayout>
+
+
                             </LinearLayout>
 
                         </LinearLayout>

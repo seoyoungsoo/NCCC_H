@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         hotelRecm = (Button) findViewById(R.id.main_first_button);
         hotelRecm.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {  // AI 전체보기
                 Intent intent = new Intent(getApplicationContext(), HotelAllListview.class);
                 startActivity(intent);
             }
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         hotelSrch = (Button) findViewById(R.id.main_second_button);
         hotelSrch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // AI 검색
                 Intent intent = new Intent(getApplicationContext(), HotelReservation.class);
                 startActivity(intent);
             }
@@ -52,31 +52,11 @@ public class MainActivity extends AppCompatActivity {
         addshow_layout = (LinearLayout) findViewById(R.id.main_addshow_layout);
         addshow_layout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // 더보기
                 Intent intent = new Intent(getApplicationContext(), HotelDetail.class);
+                //호텔 정보 putExtra
                 startActivity(intent);
             }
         });
-    }
-
-    class Task extends AsyncTask<String, Void, Void> {
-
-        @Override
-        protected Void doInBackground(String... strings) {
-            try {
-                String str;
-                URL url = new URL("jsp 경로"); // 보낼 jsp 주소를 작성
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                conn.setRequestMethod("POST"); //데이터를 POST 방식으로 전송
-
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
     }
 }
