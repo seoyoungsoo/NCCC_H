@@ -41,17 +41,23 @@ public class HotelDetail extends AppCompatActivity {
     TextView htlTitle;
     TextView htlCountry;
     TextView htlAddr;
+
     TextView htlPrgrNum1;
     TextView htlPrgrNum2;
     TextView htlPrgrNum3;
     TextView htlPrgrNum4;
     TextView htlPrgrNum5;
+
     TextView htlValue;
+
     TextView evalValue1;
     TextView evalValue2;
     TextView evalValue3;
     TextView evalValue4;
     TextView evalValue5;
+
+    TextView popTourList;
+    TextView nearTourList;
 
     Button htlEval;
     Button htlReservation;
@@ -83,6 +89,11 @@ public class HotelDetail extends AppCompatActivity {
 
     Boolean inflateView = false;
     Boolean evalCont = false; // 평가 유무확인 true면 평가한 것
+
+    String UserID;
+    String hotelname;
+    String hotelcode;
+    String citycode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -260,18 +271,27 @@ public class HotelDetail extends AppCompatActivity {
     }
 
     public void setFirst() {
+        UserID = getIntent().getStringExtra("userID");
+        hotelname = getIntent().getStringExtra("hotelname");
+        hotelcode = getIntent().getStringExtra("hotelcode");
+        citycode = getIntent().getStringExtra("citycode");
+
         backBtn = (ImageView) findViewById(R.id.hotel_detail_back);
         htlImage1 = (ImageView) findViewById(R.id.hotel_detail_img1);
         htlImage2 = (ImageView) findViewById(R.id.hotel_detail_img2);
 
         htlTitle = (TextView) findViewById(R.id.hotel_detail_title);
+        htlTitle.setText(hotelname);
+
         htlCountry = (TextView) findViewById(R.id.hotel_country);
         htlAddr = (TextView) findViewById(R.id.hotel_addr);
+
         htlPrgrNum1 = (TextView) findViewById(R.id.progress_1);
         htlPrgrNum2 = (TextView) findViewById(R.id.progress_2);
         htlPrgrNum3 = (TextView) findViewById(R.id.progress_3);
         htlPrgrNum4 = (TextView) findViewById(R.id.progress_4);
         htlPrgrNum5 = (TextView) findViewById(R.id.progress_5);
+
         htlValue = (TextView) findViewById(R.id.hotel_detail_value);
 
         htlEval = (Button) findViewById(R.id.hotel_detail_evaluation);
@@ -282,6 +302,9 @@ public class HotelDetail extends AppCompatActivity {
         htlPrgrBar3 = (ProgressBar) findViewById(R.id.hotel_detail_progress3);
         htlPrgrBar4 = (ProgressBar) findViewById(R.id.hotel_detail_progress4);
         htlPrgrBar5 = (ProgressBar) findViewById(R.id.hotel_detail_progress5);
+
+        popTourList = (TextView) findViewById(R.id.hotel_popular_Tourlist);
+        nearTourList = (TextView) findViewById(R.id.hotel_near_Tourlist);
     }
 
     public void setBack() {

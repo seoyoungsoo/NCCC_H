@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+
 public class HotelTutorial extends AppCompatActivity {
 
     private static int TIME_OUT = 500;
@@ -45,13 +46,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay1;
     ProgressBar tutPrgrBar4_lay1;
     ProgressBar tutPrgrBar5_lay1;
+    ProgressBar tutPrgrBar6_lay1;
 
     TextView tutPrgrNum1_lay1;
     TextView tutPrgrNum2_lay1;
     TextView tutPrgrNum3_lay1;
     TextView tutPrgrNum4_lay1;
     TextView tutPrgrNum5_lay1;
-    TextView tutValue_lay1;
+    TextView tutPrgrNum6_lay1;
 
     RatingBar tutRating_lay1;
 
@@ -63,13 +65,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay2;
     ProgressBar tutPrgrBar4_lay2;
     ProgressBar tutPrgrBar5_lay2;
+    ProgressBar tutPrgrBar6_lay2;
 
     TextView tutPrgrNum1_lay2;
     TextView tutPrgrNum2_lay2;
     TextView tutPrgrNum3_lay2;
     TextView tutPrgrNum4_lay2;
     TextView tutPrgrNum5_lay2;
-    TextView tutValue_lay2;
+    TextView tutPrgrNum6_lay2;
 
     RatingBar tutRating_lay2;
 
@@ -81,13 +84,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay3;
     ProgressBar tutPrgrBar4_lay3;
     ProgressBar tutPrgrBar5_lay3;
+    ProgressBar tutPrgrBar6_lay3;
 
     TextView tutPrgrNum1_lay3;
     TextView tutPrgrNum2_lay3;
     TextView tutPrgrNum3_lay3;
     TextView tutPrgrNum4_lay3;
     TextView tutPrgrNum5_lay3;
-    TextView tutValue_lay3;
+    TextView tutPrgrNum6_lay3;
 
     RatingBar tutRating_lay3;
 
@@ -99,13 +103,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay4;
     ProgressBar tutPrgrBar4_lay4;
     ProgressBar tutPrgrBar5_lay4;
+    ProgressBar tutPrgrBar6_lay4;
 
     TextView tutPrgrNum1_lay4;
     TextView tutPrgrNum2_lay4;
     TextView tutPrgrNum3_lay4;
     TextView tutPrgrNum4_lay4;
     TextView tutPrgrNum5_lay4;
-    TextView tutValue_lay4;
+    TextView tutPrgrNum6_lay4;
 
     RatingBar tutRating_lay4;
 
@@ -117,13 +122,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay5;
     ProgressBar tutPrgrBar4_lay5;
     ProgressBar tutPrgrBar5_lay5;
+    ProgressBar tutPrgrBar6_lay5;
 
     TextView tutPrgrNum1_lay5;
     TextView tutPrgrNum2_lay5;
     TextView tutPrgrNum3_lay5;
     TextView tutPrgrNum4_lay5;
     TextView tutPrgrNum5_lay5;
-    TextView tutValue_lay5;
+    TextView tutPrgrNum6_lay5;
 
     RatingBar tutRating_lay5;
 
@@ -135,13 +141,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay6;
     ProgressBar tutPrgrBar4_lay6;
     ProgressBar tutPrgrBar5_lay6;
+    ProgressBar tutPrgrBar6_lay6;
 
     TextView tutPrgrNum1_lay6;
     TextView tutPrgrNum2_lay6;
     TextView tutPrgrNum3_lay6;
     TextView tutPrgrNum4_lay6;
     TextView tutPrgrNum5_lay6;
-    TextView tutValue_lay6;
+    TextView tutPrgrNum6_lay6;
 
     RatingBar tutRating_lay6;
 
@@ -153,13 +160,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay7;
     ProgressBar tutPrgrBar4_lay7;
     ProgressBar tutPrgrBar5_lay7;
+    ProgressBar tutPrgrBar6_lay7;
 
     TextView tutPrgrNum1_lay7;
     TextView tutPrgrNum2_lay7;
     TextView tutPrgrNum3_lay7;
     TextView tutPrgrNum4_lay7;
     TextView tutPrgrNum5_lay7;
-    TextView tutValue_lay7;
+    TextView tutPrgrNum6_lay7;
 
     RatingBar tutRating_lay7;
 
@@ -171,13 +179,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay8;
     ProgressBar tutPrgrBar4_lay8;
     ProgressBar tutPrgrBar5_lay8;
+    ProgressBar tutPrgrBar6_lay8;
 
     TextView tutPrgrNum1_lay8;
     TextView tutPrgrNum2_lay8;
     TextView tutPrgrNum3_lay8;
     TextView tutPrgrNum4_lay8;
     TextView tutPrgrNum5_lay8;
-    TextView tutValue_lay8;
+    TextView tutPrgrNum6_lay8;
 
     RatingBar tutRating_lay8;
 
@@ -189,13 +198,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay9;
     ProgressBar tutPrgrBar4_lay9;
     ProgressBar tutPrgrBar5_lay9;
+    ProgressBar tutPrgrBar6_lay9;
 
     TextView tutPrgrNum1_lay9;
     TextView tutPrgrNum2_lay9;
     TextView tutPrgrNum3_lay9;
     TextView tutPrgrNum4_lay9;
     TextView tutPrgrNum5_lay9;
-    TextView tutValue_lay9;
+    TextView tutPrgrNum6_lay9;
 
     RatingBar tutRating_lay9;
 
@@ -207,13 +217,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay10;
     ProgressBar tutPrgrBar4_lay10;
     ProgressBar tutPrgrBar5_lay10;
+    ProgressBar tutPrgrBar6_lay10;
 
     TextView tutPrgrNum1_lay10;
     TextView tutPrgrNum2_lay10;
     TextView tutPrgrNum3_lay10;
     TextView tutPrgrNum4_lay10;
     TextView tutPrgrNum5_lay10;
-    TextView tutValue_lay10;
+    TextView tutPrgrNum6_lay10;
 
     RatingBar tutRating_lay10;
 
@@ -225,13 +236,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay11;
     ProgressBar tutPrgrBar4_lay11;
     ProgressBar tutPrgrBar5_lay11;
+    ProgressBar tutPrgrBar6_lay11;
 
     TextView tutPrgrNum1_lay11;
     TextView tutPrgrNum2_lay11;
     TextView tutPrgrNum3_lay11;
     TextView tutPrgrNum4_lay11;
     TextView tutPrgrNum5_lay11;
-    TextView tutValue_lay11;
+    TextView tutPrgrNum6_lay11;
 
     RatingBar tutRating_lay11;
 
@@ -243,13 +255,14 @@ public class HotelTutorial extends AppCompatActivity {
     ProgressBar tutPrgrBar3_lay12;
     ProgressBar tutPrgrBar4_lay12;
     ProgressBar tutPrgrBar5_lay12;
+    ProgressBar tutPrgrBar6_lay12;
 
     TextView tutPrgrNum1_lay12;
     TextView tutPrgrNum2_lay12;
     TextView tutPrgrNum3_lay12;
     TextView tutPrgrNum4_lay12;
     TextView tutPrgrNum5_lay12;
-    TextView tutValue_lay12;
+    TextView tutPrgrNum6_lay12;
 
     RatingBar tutRating_lay12;
 
@@ -310,7 +323,6 @@ public class HotelTutorial extends AppCompatActivity {
     List<String> score3 = new ArrayList<>();
     List<String> score4 = new ArrayList<>();
     List<String> score5 = new ArrayList<>();
-    List<String> price = new ArrayList<>();
     List<String> average = new ArrayList<>();
 
     List<String> hotelcodeadd = new ArrayList<>();
@@ -360,14 +372,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay1 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay1);
         tutPrgrBar4_lay1 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay1);
         tutPrgrBar5_lay1 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay1);
+        tutPrgrBar6_lay1 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay1);
 
         tutPrgrNum1_lay1 = (TextView) findViewById(R.id.tutorial_value1_lay1);
         tutPrgrNum2_lay1 = (TextView) findViewById(R.id.tutorial_value2_lay1);
         tutPrgrNum3_lay1 = (TextView) findViewById(R.id.tutorial_value3_lay1);
         tutPrgrNum4_lay1 = (TextView) findViewById(R.id.tutorial_value4_lay1);
         tutPrgrNum5_lay1 = (TextView) findViewById(R.id.tutorial_value5_lay1);
-
-        tutValue_lay1 = (TextView) findViewById(R.id.tutorial_value6_lay1);
+        tutPrgrNum6_lay1 = (TextView) findViewById(R.id.tutorial_value6_lay1);
 
         tutRating_lay1 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay1);
 
@@ -379,14 +391,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay2 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay2);
         tutPrgrBar4_lay2 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay2);
         tutPrgrBar5_lay2 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay2);
+        tutPrgrBar6_lay2 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay2);
 
         tutPrgrNum1_lay2 = (TextView) findViewById(R.id.tutorial_value1_lay2);
         tutPrgrNum2_lay2 = (TextView) findViewById(R.id.tutorial_value2_lay2);
         tutPrgrNum3_lay2 = (TextView) findViewById(R.id.tutorial_value3_lay2);
         tutPrgrNum4_lay2 = (TextView) findViewById(R.id.tutorial_value4_lay2);
         tutPrgrNum5_lay2 = (TextView) findViewById(R.id.tutorial_value5_lay2);
-
-        tutValue_lay2 = (TextView) findViewById(R.id.tutorial_value6_lay2);
+        tutPrgrNum6_lay2 = (TextView) findViewById(R.id.tutorial_value6_lay2);
 
         tutRating_lay2 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay2);
 
@@ -398,14 +410,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay3 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay3);
         tutPrgrBar4_lay3 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay3);
         tutPrgrBar5_lay3 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay3);
+        tutPrgrBar6_lay3 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay3);
 
         tutPrgrNum1_lay3 = (TextView) findViewById(R.id.tutorial_value1_lay3);
         tutPrgrNum2_lay3 = (TextView) findViewById(R.id.tutorial_value2_lay3);
         tutPrgrNum3_lay3 = (TextView) findViewById(R.id.tutorial_value3_lay3);
         tutPrgrNum4_lay3 = (TextView) findViewById(R.id.tutorial_value4_lay3);
         tutPrgrNum5_lay3 = (TextView) findViewById(R.id.tutorial_value5_lay3);
-
-        tutValue_lay3 = (TextView) findViewById(R.id.tutorial_value6_lay3);
+        tutPrgrNum6_lay3 = (TextView) findViewById(R.id.tutorial_value6_lay3);
 
         tutRating_lay3 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay3);
 
@@ -417,14 +429,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay4 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay4);
         tutPrgrBar4_lay4 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay4);
         tutPrgrBar5_lay4 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay4);
+        tutPrgrBar6_lay4 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay4);
 
         tutPrgrNum1_lay4 = (TextView) findViewById(R.id.tutorial_value1_lay4);
         tutPrgrNum2_lay4 = (TextView) findViewById(R.id.tutorial_value2_lay4);
         tutPrgrNum3_lay4 = (TextView) findViewById(R.id.tutorial_value3_lay4);
         tutPrgrNum4_lay4 = (TextView) findViewById(R.id.tutorial_value4_lay4);
         tutPrgrNum5_lay4 = (TextView) findViewById(R.id.tutorial_value5_lay4);
-
-        tutValue_lay4 = (TextView) findViewById(R.id.tutorial_value6_lay4);
+        tutPrgrNum6_lay4 = (TextView) findViewById(R.id.tutorial_value6_lay4);
 
         tutRating_lay4 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay4);
 
@@ -436,14 +448,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay5 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay5);
         tutPrgrBar4_lay5 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay5);
         tutPrgrBar5_lay5 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay5);
+        tutPrgrBar6_lay5 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay5);
 
         tutPrgrNum1_lay5 = (TextView) findViewById(R.id.tutorial_value1_lay5);
         tutPrgrNum2_lay5 = (TextView) findViewById(R.id.tutorial_value2_lay5);
         tutPrgrNum3_lay5 = (TextView) findViewById(R.id.tutorial_value3_lay5);
         tutPrgrNum4_lay5 = (TextView) findViewById(R.id.tutorial_value4_lay5);
         tutPrgrNum5_lay5 = (TextView) findViewById(R.id.tutorial_value5_lay5);
-
-        tutValue_lay5 = (TextView) findViewById(R.id.tutorial_value6_lay5);
+        tutPrgrNum6_lay5 = (TextView) findViewById(R.id.tutorial_value6_lay5);
 
         tutRating_lay5 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay5);
 
@@ -455,14 +467,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay6 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay6);
         tutPrgrBar4_lay6 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay6);
         tutPrgrBar5_lay6 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay6);
+        tutPrgrBar6_lay6 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay6);
 
         tutPrgrNum1_lay6 = (TextView) findViewById(R.id.tutorial_value1_lay6);
         tutPrgrNum2_lay6 = (TextView) findViewById(R.id.tutorial_value2_lay6);
         tutPrgrNum3_lay6 = (TextView) findViewById(R.id.tutorial_value3_lay6);
         tutPrgrNum4_lay6 = (TextView) findViewById(R.id.tutorial_value4_lay6);
         tutPrgrNum5_lay6 = (TextView) findViewById(R.id.tutorial_value5_lay6);
-
-        tutValue_lay6 = (TextView) findViewById(R.id.tutorial_value6_lay6);
+        tutPrgrNum6_lay6 = (TextView) findViewById(R.id.tutorial_value6_lay6);
 
         tutRating_lay6 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay6);
 
@@ -474,14 +486,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay7 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay7);
         tutPrgrBar4_lay7 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay7);
         tutPrgrBar5_lay7 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay7);
+        tutPrgrBar6_lay7 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay7);
 
         tutPrgrNum1_lay7 = (TextView) findViewById(R.id.tutorial_value1_lay7);
         tutPrgrNum2_lay7 = (TextView) findViewById(R.id.tutorial_value2_lay7);
         tutPrgrNum3_lay7 = (TextView) findViewById(R.id.tutorial_value3_lay7);
         tutPrgrNum4_lay7 = (TextView) findViewById(R.id.tutorial_value4_lay7);
         tutPrgrNum5_lay7 = (TextView) findViewById(R.id.tutorial_value5_lay7);
-
-        tutValue_lay7 = (TextView) findViewById(R.id.tutorial_value6_lay7);
+        tutPrgrNum6_lay7 = (TextView) findViewById(R.id.tutorial_value6_lay7);
 
         tutRating_lay7 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay7);
 
@@ -493,14 +505,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay8 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay8);
         tutPrgrBar4_lay8 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay8);
         tutPrgrBar5_lay8 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay8);
+        tutPrgrBar6_lay8 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay8);
 
         tutPrgrNum1_lay8 = (TextView) findViewById(R.id.tutorial_value1_lay8);
         tutPrgrNum2_lay8 = (TextView) findViewById(R.id.tutorial_value2_lay8);
         tutPrgrNum3_lay8 = (TextView) findViewById(R.id.tutorial_value3_lay8);
         tutPrgrNum4_lay8 = (TextView) findViewById(R.id.tutorial_value4_lay8);
         tutPrgrNum5_lay8 = (TextView) findViewById(R.id.tutorial_value5_lay8);
-
-        tutValue_lay8 = (TextView) findViewById(R.id.tutorial_value6_lay8);
+        tutPrgrNum6_lay8 = (TextView) findViewById(R.id.tutorial_value6_lay8);
 
         tutRating_lay8 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay8);
 
@@ -512,14 +524,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay9 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay9);
         tutPrgrBar4_lay9 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay9);
         tutPrgrBar5_lay9 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay9);
+        tutPrgrBar6_lay9 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay9);
 
         tutPrgrNum1_lay9 = (TextView) findViewById(R.id.tutorial_value1_lay9);
         tutPrgrNum2_lay9 = (TextView) findViewById(R.id.tutorial_value2_lay9);
         tutPrgrNum3_lay9 = (TextView) findViewById(R.id.tutorial_value3_lay9);
         tutPrgrNum4_lay9 = (TextView) findViewById(R.id.tutorial_value4_lay9);
         tutPrgrNum5_lay9 = (TextView) findViewById(R.id.tutorial_value5_lay9);
-
-        tutValue_lay9 = (TextView) findViewById(R.id.tutorial_value6_lay9);
+        tutPrgrNum6_lay9 = (TextView) findViewById(R.id.tutorial_value6_lay9);
 
         tutRating_lay9 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay9);
 
@@ -531,14 +543,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay10 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay10);
         tutPrgrBar4_lay10 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay10);
         tutPrgrBar5_lay10 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay10);
+        tutPrgrBar6_lay10 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay10);
 
         tutPrgrNum1_lay10 = (TextView) findViewById(R.id.tutorial_value1_lay10);
         tutPrgrNum2_lay10 = (TextView) findViewById(R.id.tutorial_value2_lay10);
         tutPrgrNum3_lay10 = (TextView) findViewById(R.id.tutorial_value3_lay10);
         tutPrgrNum4_lay10 = (TextView) findViewById(R.id.tutorial_value4_lay10);
         tutPrgrNum5_lay10 = (TextView) findViewById(R.id.tutorial_value5_lay10);
-
-        tutValue_lay10 = (TextView) findViewById(R.id.tutorial_value6_lay10);
+        tutPrgrNum6_lay10 = (TextView) findViewById(R.id.tutorial_value6_lay10);
 
         tutRating_lay10 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay10);
 
@@ -550,14 +562,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay11 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay11);
         tutPrgrBar4_lay11 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay11);
         tutPrgrBar5_lay11 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay11);
+        tutPrgrBar6_lay11 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay11);
 
         tutPrgrNum1_lay11 = (TextView) findViewById(R.id.tutorial_value1_lay11);
         tutPrgrNum2_lay11 = (TextView) findViewById(R.id.tutorial_value2_lay11);
         tutPrgrNum3_lay11 = (TextView) findViewById(R.id.tutorial_value3_lay11);
         tutPrgrNum4_lay11 = (TextView) findViewById(R.id.tutorial_value4_lay11);
         tutPrgrNum5_lay11 = (TextView) findViewById(R.id.tutorial_value5_lay11);
-
-        tutValue_lay11 = (TextView) findViewById(R.id.tutorial_value6_lay11);
+        tutPrgrNum6_lay11 = (TextView) findViewById(R.id.tutorial_value6_lay11);
 
         tutRating_lay11 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay11);
 
@@ -569,14 +581,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrBar3_lay12 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress3_lay12);
         tutPrgrBar4_lay12 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress4_lay12);
         tutPrgrBar5_lay12 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress5_lay12);
+        tutPrgrBar6_lay12 = (ProgressBar) findViewById(R.id.hotel_tutorial_progress6_lay12);
 
         tutPrgrNum1_lay12 = (TextView) findViewById(R.id.tutorial_value1_lay12);
         tutPrgrNum2_lay12 = (TextView) findViewById(R.id.tutorial_value2_lay12);
         tutPrgrNum3_lay12 = (TextView) findViewById(R.id.tutorial_value3_lay12);
         tutPrgrNum4_lay12 = (TextView) findViewById(R.id.tutorial_value4_lay12);
         tutPrgrNum5_lay12 = (TextView) findViewById(R.id.tutorial_value5_lay12);
-
-        tutValue_lay12 = (TextView) findViewById(R.id.tutorial_value6_lay12);
+        tutPrgrNum6_lay12 = (TextView) findViewById(R.id.tutorial_value6_lay12);
 
         tutRating_lay12 = (RatingBar) findViewById(R.id.hotel_tutorial_rating_lay12);
 
@@ -711,7 +723,7 @@ public class HotelTutorial extends AppCompatActivity {
             JSONArray jsonArray = new JSONObject(result).getJSONArray(userID);
 
             if (jsonArray != null) {
-                for (i = 0; i < jsonArray.length() || i < 12; i++) {
+                for (i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                     hotelcode.add(jsonObject.getString("hotelcode"));
@@ -720,7 +732,6 @@ public class HotelTutorial extends AppCompatActivity {
                     score3.add(jsonObject.getString("score3"));
                     score4.add(jsonObject.getString("score4"));
                     score5.add(jsonObject.getString("score5"));
-                    price.add(jsonObject.getString("price"));
                     average.add(jsonObject.getString("average"));
                 }
             } else {
@@ -741,7 +752,7 @@ public class HotelTutorial extends AppCompatActivity {
             JSONArray jsonArrayAdd = new JSONObject(result2).getJSONArray(userID);
 
             if (jsonArrayAdd != null) {
-                for (int r = i; r < jsonArrayAdd.length() || r < 12; r++, j++) {
+                for (int r = i; r < jsonArrayAdd.length(); r++, j++) {
                     JSONObject jsonAddObject = jsonArrayAdd.getJSONObject(j);
                     bn = true;
                     List<String> a = new ArrayList<>();
@@ -761,7 +772,6 @@ public class HotelTutorial extends AppCompatActivity {
                         score3.add(jsonAddObject.getString("score3add"));
                         score4.add(jsonAddObject.getString("score4add"));
                         score5.add(jsonAddObject.getString("score5add"));
-                        price.add(jsonAddObject.getString("priceadd"));
                         average.add(jsonAddObject.getString("averageadd"));
                         bn = false;
                     }
@@ -793,7 +803,9 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay1.setText(score4.get(0));
         tutPrgrBar5_lay1.setProgress((int)(Float.parseFloat(score5.get(0))*10));
         tutPrgrNum5_lay1.setText(score5.get(0));
-        tutValue_lay1.setText(price.get(0));
+        tutPrgrBar6_lay1.setProgress((int)(Float.parseFloat(average.get(0))*10));
+        tutPrgrNum6_lay1.setText(average.get(0));
+
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(1)+".jpg")
@@ -811,7 +823,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay2.setText(score4.get(1));
         tutPrgrBar5_lay2.setProgress((int)(Float.parseFloat(score5.get(1))*10));
         tutPrgrNum5_lay2.setText(score5.get(1));
-        tutValue_lay2.setText(price.get(1));
+        tutPrgrBar6_lay2.setProgress((int)(Float.parseFloat(average.get(1))*10));
+        tutPrgrNum6_lay2.setText(average.get(1));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(2)+".jpg")
@@ -829,7 +842,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay3.setText(score4.get(2));
         tutPrgrBar5_lay3.setProgress((int)(Float.parseFloat(score5.get(2))*10));
         tutPrgrNum5_lay3.setText(score5.get(2));
-        tutValue_lay3.setText(price.get(2));
+        tutPrgrBar6_lay3.setProgress((int)(Float.parseFloat(average.get(2))*10));
+        tutPrgrNum6_lay3.setText(average.get(2));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(3)+".jpg")
@@ -847,7 +861,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay4.setText(score4.get(3));
         tutPrgrBar5_lay4.setProgress((int)(Float.parseFloat(score5.get(3))*10));
         tutPrgrNum5_lay4.setText(score5.get(3));
-        tutValue_lay4.setText(price.get(3));
+        tutPrgrBar6_lay4.setProgress((int)(Float.parseFloat(average.get(3))*10));
+        tutPrgrNum6_lay4.setText(average.get(3));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(4)+".jpg")
@@ -865,7 +880,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay5.setText(score4.get(4));
         tutPrgrBar5_lay5.setProgress((int)(Float.parseFloat(score5.get(4))*10));
         tutPrgrNum5_lay5.setText(score5.get(4));
-        tutValue_lay5.setText(price.get(4));
+        tutPrgrBar6_lay5.setProgress((int)(Float.parseFloat(average.get(4))*10));
+        tutPrgrNum6_lay5.setText(average.get(4));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(5)+".jpg")
@@ -883,7 +899,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay6.setText(score4.get(5));
         tutPrgrBar5_lay6.setProgress((int)(Float.parseFloat(score5.get(5))*10));
         tutPrgrNum5_lay6.setText(score5.get(5));
-        tutValue_lay6.setText(price.get(5));
+        tutPrgrBar6_lay6.setProgress((int)(Float.parseFloat(average.get(5))*10));
+        tutPrgrNum6_lay6.setText(average.get(5));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(6)+".jpg")
@@ -901,7 +918,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay7.setText(score4.get(6));
         tutPrgrBar5_lay7.setProgress((int)(Float.parseFloat(score5.get(6))*10));
         tutPrgrNum5_lay7.setText(score5.get(6));
-        tutValue_lay7.setText(price.get(6));
+        tutPrgrBar6_lay7.setProgress((int)(Float.parseFloat(average.get(6))*10));
+        tutPrgrNum6_lay7.setText(average.get(6));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(7)+".jpg")
@@ -919,7 +937,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay8.setText(score4.get(7));
         tutPrgrBar5_lay8.setProgress((int)(Float.parseFloat(score5.get(7))*10));
         tutPrgrNum5_lay8.setText(score5.get(7));
-        tutValue_lay8.setText(price.get(7));
+        tutPrgrBar6_lay8.setProgress((int)(Float.parseFloat(average.get(7))*10));
+        tutPrgrNum6_lay8.setText(average.get(7));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(8)+".jpg")
@@ -937,7 +956,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay9.setText(score4.get(8));
         tutPrgrBar5_lay9.setProgress((int)(Float.parseFloat(score5.get(8))*10));
         tutPrgrNum5_lay9.setText(score5.get(8));
-        tutValue_lay9.setText(price.get(8));
+        tutPrgrBar6_lay9.setProgress((int)(Float.parseFloat(average.get(8))*10));
+        tutPrgrNum6_lay9.setText(average.get(8));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(9)+".jpg")
@@ -955,7 +975,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay10.setText(score4.get(9));
         tutPrgrBar5_lay10.setProgress((int)(Float.parseFloat(score5.get(9))*10));
         tutPrgrNum5_lay10.setText(score5.get(9));
-        tutValue_lay10.setText(price.get(9));
+        tutPrgrBar6_lay10.setProgress((int)(Float.parseFloat(average.get(9))*10));
+        tutPrgrNum6_lay10.setText(average.get(9));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(10)+".jpg")
@@ -973,7 +994,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay11.setText(score4.get(10));
         tutPrgrBar5_lay11.setProgress((int)(Float.parseFloat(score5.get(10))*10));
         tutPrgrNum5_lay11.setText(score5.get(10));
-        tutValue_lay11.setText(price.get(10));
+        tutPrgrBar6_lay11.setProgress((int)(Float.parseFloat(average.get(10))*10));
+        tutPrgrNum6_lay11.setText(average.get(10));
 
         Glide.with(this)
                 .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(11)+".jpg")
@@ -991,7 +1013,8 @@ public class HotelTutorial extends AppCompatActivity {
         tutPrgrNum4_lay12.setText(score4.get(11));
         tutPrgrBar5_lay12.setProgress((int)(Float.parseFloat(score5.get(11))*10));
         tutPrgrNum5_lay12.setText(score5.get(11));
-        tutValue_lay12.setText(price.get(11));
+        tutPrgrBar6_lay12.setProgress((int)(Float.parseFloat(average.get(11))*10));
+        tutPrgrNum6_lay12.setText(average.get(11));
     }
 
     public void setNextClickListener() {
@@ -1139,7 +1162,6 @@ public class HotelTutorial extends AppCompatActivity {
                                 tutorialData12.execute(userID, hotelcode.get(11), score1.get(11), score2.get(11), score3.get(11), score4.get(11), score5.get(11), average.get(11), ratingVal12);
                                 Toast.makeText(getApplicationContext(), "튜토리얼이 완료됐습니다.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                intent.putExtra("userID", userID);
                                 startActivity(intent);
                                 finish();
                             }

@@ -338,38 +338,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay1"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay1"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay1"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -695,38 +697,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay2"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay2"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay2"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1052,38 +1056,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay3"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay3"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay3"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1409,38 +1415,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay4"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay4"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay4"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1766,38 +1774,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay5"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay5"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay5"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -2123,38 +2133,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay6"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay6"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay6"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -2480,38 +2492,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay7"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay7"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay7"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -2837,38 +2851,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay8"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay8"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay8"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -3194,38 +3210,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay9"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay9"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay9"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -3551,38 +3569,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay10"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay10"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay10"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -3908,38 +3928,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay11"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay11"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay11"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -4265,38 +4287,40 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:weightSum="5"
+                                android:weightSum="10.5"
                                 android:orientation="horizontal"
                                 android:layout_marginBottom="10dp">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="평균 가격"
+                                    android:text="평균 평점"
                                     android:layout_weight="3"
                                     android:textStyle="bold"
                                     android:textSize="20dp"/>
 
-                                <TextView
-                                    android:id="@+id/tutorial_value6_lay12"
-                                    android:layout_width="wrap_content"
+
+                                <ProgressBar
+                                    android:id="@+id/hotel_tutorial_progress6_lay12"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="00000"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="1.6"
-                                    android:gravity="right" />
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginTop="3dp"
+                                    android:progress="50"
+                                    android:progressTint="@color/average"
+                                    android:secondaryProgressTint="@color/colorPrimaryDark"
+                                    android:layout_weight="3"/>
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/tutorial_value6_lay12"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="원"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:layout_weight="0.4"
-                                    android:gravity="center_horizontal"
-                                    android:layout_marginEnd="9dp"
-                                    android:layout_marginRight="9dp"/>
+                                    android:text="10.0"
+                                    android:gravity="center"
+                                    android:layout_weight="4.5"
+                                    android:textSize="20dp"/>
+
                             </LinearLayout>
 
                             <LinearLayout

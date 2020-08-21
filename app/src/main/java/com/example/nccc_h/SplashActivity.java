@@ -78,6 +78,7 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 } else {
                     Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    i.putExtra("userID", userID);
                     startActivity(i);
                     finish();
                 }

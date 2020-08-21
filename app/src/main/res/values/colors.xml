@@ -11,4 +11,5 @@
     <color name="textBlack">#252525</color>
     <color name="textViewBack">#FAFAFA</color>
     <color name="imageBack">#EFEFEF</color>
+    <color name="average">#C55C00</color>
 </resources>
