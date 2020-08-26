@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
         userID = getDeviceId();
 
-        setButton();
         getJsonData();
         setMain();
+        setButton();
 
     }
 
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getJsonData() {
-        String j;
+        String j, k;
         try {
             result = mainTask.execute(userID).get();
             JSONArray jsonArray = new JSONObject(result).getJSONArray(userID);
@@ -119,10 +119,23 @@ public class MainActivity extends AppCompatActivity {
 
             hotelcode = jsonObject.getString("hotelcode");
             hotelname = jsonObject.getString("hotelname");
-            citycode = jsonObject.getString("citycode");
+            j = jsonObject.getString("citycode");
+            if(j.contains("DaL")) {
+                citycode = "달랏";
+            } else if(j.contains("DaN")) {
+                citycode = "다낭";
+            } else if(j.contains("Ha")) {
+                citycode = "하노이";
+            } else if(j.contains("Nha")) {
+                citycode = "나트랑";
+            } else if(j.contains("Hoi")) {
+                citycode = "호이안";
+            } else {
+                citycode = "호치민";
+            }
 
-            j = (jsonObject.getString("starscore"));
-            starscore = String.format("%.1f", j);
+            k = (jsonObject.getString("starscore"));
+            starscore = String.format("%.1f", k);
 
 
         } catch (InterruptedException e) {
@@ -144,7 +157,10 @@ public class MainActivity extends AppCompatActivity {
         //mainRating.setRating(Float.parseFloat(starscore));
 
         hotelName = (TextView) findViewById(R.id.main_hotel_name);
+        hotelName.setText(hotelname);
+
         cityName = (TextView) findViewById(R.id.main_city_name);
+        cityName.setText(citycode);
     }
 
     class MainTask extends AsyncTask<String, Void, String> {

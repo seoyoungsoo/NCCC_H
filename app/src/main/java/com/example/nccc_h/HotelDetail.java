@@ -3,8 +3,11 @@ package com.example.nccc_h;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DisplayCutout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,11 +25,24 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ExecutionException;
 
 public class HotelDetail extends AppCompatActivity {
 
@@ -90,10 +106,29 @@ public class HotelDetail extends AppCompatActivity {
     Boolean inflateView = false;
     Boolean evalCont = false; // 평가 유무확인 true면 평가한 것
 
-    String UserID;
-    String hotelname;
+    String result;
+
+    String userID;
+    String hotelname; //호텔이름
     String hotelcode;
-    String citycode;
+    String citycode; //도시이름
+
+    //AsyncTask 연동을 통해 받아올 내용
+    String address;
+    String value1;
+    String value2;
+    String value3;
+    String value4;
+    String value5;
+    String price;
+    String popular;
+    String near;
+    String url;
+
+    Intent intent = getIntent();
+
+    DetailTask detailTask = new DetailTask();
+    EvalTask evalTask = new EvalTask();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,11 +136,14 @@ public class HotelDetail extends AppCompatActivity {
         setContentView(R.layout.activity_hotel_detail);
 
         this.setFirst();
+        this.getDetailJsonData();
+        this.getHotelData();
         this.evalHotel();
         this.setBack();
 
     }
 
+    //호텔 평가하기 누를 때 평가 유무 확인 및 AsyncTask 연동
     public void evalHotel() {
         htlEval.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +154,7 @@ public class HotelDetail extends AppCompatActivity {
                 } else {
 
                     setEvaluation();
+                    setSeek();
                     setEval();
 
                     htlEval_Eval.setOnClickListener(new View.OnClickListener() { //평가하기 버튼
@@ -137,6 +176,59 @@ public class HotelDetail extends AppCompatActivity {
         });
     }
 
+    //평가화면 초기 설정
+    public void setEvaluation() {
+        inflateView = true;
+        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        linearEvaluation = (LinearLayout) inflater.inflate(R.layout.activity_hotel_evaluation, null);
+
+        LinearLayout.LayoutParams paramlinear = new LinearLayout.LayoutParams(
+
+                LinearLayout.LayoutParams.MATCH_PARENT,
+
+                LinearLayout.LayoutParams.MATCH_PARENT
+        );
+
+        evalBack = (ImageButton) linearEvaluation.findViewById(R.id.back);
+        backGround = (LinearLayout) linearEvaluation.findViewById(R.id.background);
+        subBackGround = (FrameLayout) linearEvaluation.findViewById(R.id.sub_background);
+        evalVisited = (CheckBox) linearEvaluation.findViewById(R.id.hotel_evaluation_checkbox);
+        evalSeek1 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar1);
+        evalSeek2 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar2);
+        evalSeek3 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar3);
+        evalSeek4 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar4);
+        evalSeek5 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar5);
+        evalRating = (RatingBar) linearEvaluation.findViewById(R.id.hotel_evaluation_rating);
+        htlEval_Eval = (Button) linearEvaluation.findViewById(R.id.hotel_evaluation_button);
+
+        evalValue1 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value1);
+        evalValue2 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value2);
+        evalValue3 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value3);
+        evalValue4 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value4);
+        evalValue5 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value5);
+
+        evalVisible = (LinearLayout) linearEvaluation.findViewById(R.id.hotel_evaluation_layout);
+
+        addContentView(linearEvaluation, paramlinear);
+        evalVisited.setChecked(false);
+        evalVisible.setVisibility(View.GONE);
+    }
+
+    //평가하기 시크바 초기 설정
+    public void setSeek() {
+        evalSeek1.setProgress((int)(Float.parseFloat(value1)*10));
+        evalValue1.setText(value1);
+        evalSeek2.setProgress((int)(Float.parseFloat(value2)*10));
+        evalValue2.setText(value2);
+        evalSeek3.setProgress((int)(Float.parseFloat(value3)*10));
+        evalValue3.setText(value3);
+        evalSeek4.setProgress((int)(Float.parseFloat(value4)*10));
+        evalValue4.setText(value4);
+        evalSeek5.setProgress((int)(Float.parseFloat(value5)*10));
+        evalValue5.setText(value5);
+    }
+
+    //평가하기 시크바 변환
     public void setEval() {
         setSeekBarMax(evalSeek1, max);
         evalSeek1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -270,18 +362,18 @@ public class HotelDetail extends AppCompatActivity {
         });
     }
 
+    //상세화면 초기 설정
     public void setFirst() {
-        UserID = getIntent().getStringExtra("userID");
-        hotelname = getIntent().getStringExtra("hotelname");
-        hotelcode = getIntent().getStringExtra("hotelcode");
-        citycode = getIntent().getStringExtra("citycode");
+        userID = intent.getStringExtra("userID");
+        hotelname = intent.getStringExtra("hotelname");
+        hotelcode = intent.getStringExtra("hotelcode");
+        citycode = intent.getStringExtra("citycode");
 
         backBtn = (ImageView) findViewById(R.id.hotel_detail_back);
         htlImage1 = (ImageView) findViewById(R.id.hotel_detail_img1);
         htlImage2 = (ImageView) findViewById(R.id.hotel_detail_img2);
 
         htlTitle = (TextView) findViewById(R.id.hotel_detail_title);
-        htlTitle.setText(hotelname);
 
         htlCountry = (TextView) findViewById(R.id.hotel_country);
         htlAddr = (TextView) findViewById(R.id.hotel_addr);
@@ -305,6 +397,38 @@ public class HotelDetail extends AppCompatActivity {
 
         popTourList = (TextView) findViewById(R.id.hotel_popular_Tourlist);
         nearTourList = (TextView) findViewById(R.id.hotel_near_Tourlist);
+    }
+
+    //상세화면
+    public void getHotelData() {
+        htlTitle.setText(hotelname);
+
+        Glide.with(this)
+                .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode+".jpg")
+                .into(htlImage1);
+        Glide.with(this)
+                .load("http://222.116.135.77:8080/NCCC_H/photo2/"+hotelcode+".jpg")
+                .into(htlImage2);
+
+        htlCountry.setText(hotelcode);
+
+        htlAddr.setText(address);
+
+        htlPrgrBar1.setProgress((int)(Float.parseFloat(value1)*10));
+        htlPrgrNum1.setText(value1);
+        htlPrgrBar2.setProgress((int)(Float.parseFloat(value2)*10));
+        htlPrgrNum2.setText(value2);
+        htlPrgrBar3.setProgress((int)(Float.parseFloat(value3)*10));
+        htlPrgrNum3.setText(value3);
+        htlPrgrBar4.setProgress((int)(Float.parseFloat(value4)*10));
+        htlPrgrNum4.setText(value4);
+        htlPrgrBar5.setProgress((int)(Float.parseFloat(value5)*10));
+        htlPrgrNum5.setText(value5);
+
+        htlValue.setText(price);
+
+        popTourList.setText(popular);
+        nearTourList.setText(near);
     }
 
     public void setBack() {
@@ -459,43 +583,6 @@ public class HotelDetail extends AppCompatActivity {
 
     }*/
 
-    public void setEvaluation() {
-        inflateView = true;
-        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        linearEvaluation = (LinearLayout) inflater.inflate(R.layout.activity_hotel_evaluation, null);
-
-        LinearLayout.LayoutParams paramlinear = new LinearLayout.LayoutParams(
-
-                LinearLayout.LayoutParams.MATCH_PARENT,
-
-                LinearLayout.LayoutParams.MATCH_PARENT
-        );
-
-        evalBack = (ImageButton) linearEvaluation.findViewById(R.id.back);
-        backGround = (LinearLayout) linearEvaluation.findViewById(R.id.background);
-        subBackGround = (FrameLayout) linearEvaluation.findViewById(R.id.sub_background);
-        evalVisited = (CheckBox) linearEvaluation.findViewById(R.id.hotel_evaluation_checkbox);
-        evalSeek1 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar1);
-        evalSeek2 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar2);
-        evalSeek3 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar3);
-        evalSeek4 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar4);
-        evalSeek5 = (SeekBar) linearEvaluation.findViewById(R.id.hotel_evaluation_seekbar5);
-        evalRating = (RatingBar) linearEvaluation.findViewById(R.id.hotel_evaluation_rating);
-        htlEval_Eval = (Button) linearEvaluation.findViewById(R.id.hotel_evaluation_button);
-
-        evalValue1 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value1);
-        evalValue2 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value2);
-        evalValue3 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value3);
-        evalValue4 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value4);
-        evalValue5 = (TextView) linearEvaluation.findViewById(R.id.hotel_evaluation_value5);
-
-        evalVisible = (LinearLayout) linearEvaluation.findViewById(R.id.hotel_evaluation_layout);
-
-        addContentView(linearEvaluation, paramlinear);
-        evalVisited.setChecked(false);
-        evalVisible.setVisibility(View.GONE);
-    }
-
     private void setSeekBarMax(SeekBar sb, int max_value) {
         sb.setMax((int)((max_value-min) / step));
     }
@@ -523,4 +610,126 @@ public class HotelDetail extends AppCompatActivity {
         }
     }
 
+    //상세화면 데이터 연동
+    public void getDetailJsonData() {
+        try {
+            result = detailTask.execute(userID, hotelcode).get();
+            JSONArray jsonArray = new JSONObject(result).getJSONArray(userID);
+
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+            address = jsonObject.getString("address");
+            value1 = jsonObject.getString("value1");
+            value2 = jsonObject.getString("value2");
+            value3 = jsonObject.getString("value3");
+            value4 = jsonObject.getString("value4");
+            value5 = jsonObject.getString("value5");
+            popular = jsonObject.getString("popular");
+            near = jsonObject.getString("near");
+            url = jsonObject.getString("url");
+
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    class DetailTask extends AsyncTask<String, Void, String> {
+
+        StringBuffer buffer = new StringBuffer();
+        String sendMsg;
+        String receiveMsg = "";
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                String str;
+                URL url = new URL("http://222.116.135.77:8080/NCCC_H/mainpage.jsp");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                conn.setRequestMethod("POST");
+
+                OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
+
+                sendMsg = "userid="+strings[0]+"&hotelcode="+strings[1];
+                osw.write(sendMsg);
+                osw.flush();
+
+                if(conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+
+                    while (true) {
+                        str = reader.readLine();
+                        if (str == null)
+                            break;
+                        buffer.append(str);
+                    }
+                    reader.close();
+                    conn.disconnect();
+
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode()+"에러");
+                }
+                receiveMsg = buffer.toString();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return receiveMsg;
+        }
+    }
+
+    class EvalTask extends AsyncTask<String, Void, String> {
+
+        StringBuffer buffer = new StringBuffer();
+        String sendMsg;
+        String receiveMsg = "";
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                String str;
+                URL url = new URL("http://222.116.135.77:8080/NCCC_H/mainpage.jsp");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                conn.setRequestMethod("POST");
+
+                OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
+
+                sendMsg = "userid="+strings[0]+"&hotelcode="+strings[1];
+                osw.write(sendMsg);
+                osw.flush();
+
+                if(conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+
+                    while (true) {
+                        str = reader.readLine();
+                        if (str == null)
+                            break;
+                        buffer.append(str);
+                    }
+                    reader.close();
+                    conn.disconnect();
+
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode()+"에러");
+                }
+                receiveMsg = buffer.toString();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return receiveMsg;
+        }
+    }
 }
