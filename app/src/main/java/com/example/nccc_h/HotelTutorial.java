@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.ModelLoader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -335,6 +336,7 @@ public class HotelTutorial extends AppCompatActivity {
 
     boolean bn;
 
+    Model_Server model_server = new Model_Server();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -1161,6 +1163,7 @@ public class HotelTutorial extends AppCompatActivity {
                             public void run() {
                                 tutorialData12.execute(userID, hotelcode.get(11), score1.get(11), score2.get(11), score3.get(11), score4.get(11), score5.get(11), average.get(11), ratingVal12);
                                 Toast.makeText(getApplicationContext(), "튜토리얼이 완료됐습니다.", Toast.LENGTH_SHORT).show();
+                                model_server.sendId(userID); //모델 학습
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);
                                 finish();

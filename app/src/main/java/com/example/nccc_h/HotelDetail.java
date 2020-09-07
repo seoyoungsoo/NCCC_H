@@ -40,6 +40,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutionException;
@@ -111,21 +113,30 @@ public class HotelDetail extends AppCompatActivity {
     String userID;
     String hotelname; //호텔이름
     String hotelcode;
-    String citycode; //도시이름
+    String cityname; //도시이름
+
+    String ratingVal;
 
     //AsyncTask 연동을 통해 받아올 내용
-    String address;
-    String value1;
-    String value2;
-    String value3;
-    String value4;
-    String value5;
-    String price;
-    String popular;
-    String near;
-    String url;
+    List<String> address = new ArrayList<>();
+    List<String> value1 = new ArrayList<>();
+    List<String> value2 = new ArrayList<>();
+    List<String> value3 = new ArrayList<>();
+    List<String> value4 = new ArrayList<>();
+    List<String> value5 = new ArrayList<>();
+    List<String> average = new ArrayList<>();
+    List<String> price = new ArrayList<>();
+    List<String> popular = new ArrayList<>();
+    List<String> near = new ArrayList<>();
+    List<String> url = new ArrayList<>();
 
-    Intent intent = getIntent();
+    //방문 호텔의 사용자 평점
+    String userVal1;
+    String userVal2;
+    String userVal3;
+    String userVal4;
+    String userVal5;
+
 
     DetailTask detailTask = new DetailTask();
     EvalTask evalTask = new EvalTask();
@@ -134,6 +145,12 @@ public class HotelDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_detail);
+
+        Intent intent = getIntent();
+        userID = intent.getStringExtra("userID");
+        hotelname = intent.getStringExtra("hotelname");
+        hotelcode = intent.getStringExtra("hotelcode");
+        cityname = intent.getStringExtra("citycode");
 
         this.setFirst();
         this.getDetailJsonData();
@@ -163,6 +180,11 @@ public class HotelDetail extends AppCompatActivity {
                             evalCont = true;
 
                             //Asynctask 연동
+                            if (evalVisited.isChecked() == false) { // deep 테이블에 추가
+                                evalTask.execute(userID, hotelcode, value1.get(0), value2.get(0), value3.get(0), value4.get(0), value5.get(0), average.get(0), ratingVal);
+                            } else if (evalVisited.isChecked() == true) { // deep 테이블과 visited 테이블에 추가
+                                evalTask.execute(userID, hotelcode, userVal1, userVal2, userVal3, userVal4, userVal5, average.get(0), ratingVal);
+                            }
 
                             Toast.makeText(getApplicationContext(), "평가됐습니다.", Toast.LENGTH_SHORT).show();
 
@@ -216,16 +238,16 @@ public class HotelDetail extends AppCompatActivity {
 
     //평가하기 시크바 초기 설정
     public void setSeek() {
-        evalSeek1.setProgress((int)(Float.parseFloat(value1)*10));
-        evalValue1.setText(value1);
-        evalSeek2.setProgress((int)(Float.parseFloat(value2)*10));
-        evalValue2.setText(value2);
-        evalSeek3.setProgress((int)(Float.parseFloat(value3)*10));
-        evalValue3.setText(value3);
-        evalSeek4.setProgress((int)(Float.parseFloat(value4)*10));
-        evalValue4.setText(value4);
-        evalSeek5.setProgress((int)(Float.parseFloat(value5)*10));
-        evalValue5.setText(value5);
+        evalSeek1.setProgress((int)(Float.parseFloat(value1.get(0))*10));
+        evalValue1.setText(value1.get(0));
+        evalSeek2.setProgress((int)(Float.parseFloat(value2.get(0))*10));
+        evalValue2.setText(value2.get(0));
+        evalSeek3.setProgress((int)(Float.parseFloat(value3.get(0))*10));
+        evalValue3.setText(value3.get(0));
+        evalSeek4.setProgress((int)(Float.parseFloat(value4.get(0))*10));
+        evalValue4.setText(value4.get(0));
+        evalSeek5.setProgress((int)(Float.parseFloat(value5.get(0))*10));
+        evalValue5.setText(value5.get(0));
     }
 
     //평가하기 시크바 변환
@@ -235,6 +257,7 @@ public class HotelDetail extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 setSeekBarChange(progress, evalValue1);
+                userVal1 = evalValue1.toString();
             }
 
             @Override
@@ -253,6 +276,7 @@ public class HotelDetail extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 setSeekBarChange(progress, evalValue2);
+                userVal2 = evalValue2.toString();
             }
 
             @Override
@@ -271,6 +295,7 @@ public class HotelDetail extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 setSeekBarChange(progress, evalValue3);
+                userVal3 = evalValue3.toString();
             }
 
             @Override
@@ -289,6 +314,7 @@ public class HotelDetail extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 setSeekBarChange(progress, evalValue4);
+                userVal4 = evalValue4.toString();
             }
 
             @Override
@@ -307,6 +333,7 @@ public class HotelDetail extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 setSeekBarChange(progress, evalValue5);
+                userVal5 = evalValue5.toString();
             }
 
             @Override
@@ -317,6 +344,13 @@ public class HotelDetail extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+
+        evalRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                ratingVal = Float.toString(rating);
             }
         });
 
@@ -364,10 +398,6 @@ public class HotelDetail extends AppCompatActivity {
 
     //상세화면 초기 설정
     public void setFirst() {
-        userID = intent.getStringExtra("userID");
-        hotelname = intent.getStringExtra("hotelname");
-        hotelcode = intent.getStringExtra("hotelcode");
-        citycode = intent.getStringExtra("citycode");
 
         backBtn = (ImageView) findViewById(R.id.hotel_detail_back);
         htlImage1 = (ImageView) findViewById(R.id.hotel_detail_img1);
@@ -410,25 +440,25 @@ public class HotelDetail extends AppCompatActivity {
                 .load("http://222.116.135.77:8080/NCCC_H/photo2/"+hotelcode+".jpg")
                 .into(htlImage2);
 
-        htlCountry.setText(hotelcode);
+        htlCountry.setText(cityname);
 
-        htlAddr.setText(address);
+        htlAddr.setText(address.get(0));
 
-        htlPrgrBar1.setProgress((int)(Float.parseFloat(value1)*10));
-        htlPrgrNum1.setText(value1);
-        htlPrgrBar2.setProgress((int)(Float.parseFloat(value2)*10));
-        htlPrgrNum2.setText(value2);
-        htlPrgrBar3.setProgress((int)(Float.parseFloat(value3)*10));
-        htlPrgrNum3.setText(value3);
-        htlPrgrBar4.setProgress((int)(Float.parseFloat(value4)*10));
-        htlPrgrNum4.setText(value4);
-        htlPrgrBar5.setProgress((int)(Float.parseFloat(value5)*10));
-        htlPrgrNum5.setText(value5);
+        htlPrgrBar1.setProgress((int)(Float.parseFloat(value1.get(0))*10));
+        htlPrgrNum1.setText(value1.get(0));
+        htlPrgrBar2.setProgress((int)(Float.parseFloat(value2.get(0))*10));
+        htlPrgrNum2.setText(value2.get(0));
+        htlPrgrBar3.setProgress((int)(Float.parseFloat(value3.get(0))*10));
+        htlPrgrNum3.setText(value3.get(0));
+        htlPrgrBar4.setProgress((int)(Float.parseFloat(value4.get(0))*10));
+        htlPrgrNum4.setText(value4.get(0));
+        htlPrgrBar5.setProgress((int)(Float.parseFloat(value5.get(0))*10));
+        htlPrgrNum5.setText(value5.get(0));
 
-        htlValue.setText(price);
+        htlValue.setText(price.get(0));
 
-        popTourList.setText(popular);
-        nearTourList.setText(near);
+        popTourList.setText(popular.get(0));
+        nearTourList.setText(near.get(0));
     }
 
     public void setBack() {
@@ -617,15 +647,20 @@ public class HotelDetail extends AppCompatActivity {
             JSONArray jsonArray = new JSONObject(result).getJSONArray(userID);
 
             JSONObject jsonObject = jsonArray.getJSONObject(0);
-            address = jsonObject.getString("address");
-            value1 = jsonObject.getString("value1");
-            value2 = jsonObject.getString("value2");
-            value3 = jsonObject.getString("value3");
-            value4 = jsonObject.getString("value4");
-            value5 = jsonObject.getString("value5");
-            popular = jsonObject.getString("popular");
-            near = jsonObject.getString("near");
-            url = jsonObject.getString("url");
+            address.add(jsonObject.getString("address"));
+            value1.add(jsonObject.getString("value1"));
+            value2.add(jsonObject.getString("value2"));
+            value3.add(jsonObject.getString("value3"));
+            value4.add(jsonObject.getString("value4"));
+            value5.add(jsonObject.getString("value5"));
+            average.add(jsonObject.getString("average"));
+            price.add(jsonObject.getString("price"));
+            popular.add(jsonObject.getString("popular"));
+            near.add(jsonObject.getString("near"));
+            url.add(jsonObject.getString("url"));
+
+            Log.i(address.get(0), address.get(0));
+            Log.i(url.get(0), url.get(0));
 
 
         } catch (InterruptedException e) {
@@ -647,7 +682,7 @@ public class HotelDetail extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             try {
                 String str;
-                URL url = new URL("http://222.116.135.77:8080/NCCC_H/mainpage.jsp");
+                URL url = new URL("http://222.116.135.77:8080/NCCC_H/detailhotel.jsp");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 conn.setRequestMethod("POST");
@@ -684,7 +719,8 @@ public class HotelDetail extends AppCompatActivity {
             return receiveMsg;
         }
     }
-
+    
+    //평가하기 버튼 클릭 시 결과값을 전달
     class EvalTask extends AsyncTask<String, Void, String> {
 
         StringBuffer buffer = new StringBuffer();
@@ -695,14 +731,14 @@ public class HotelDetail extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             try {
                 String str;
-                URL url = new URL("http://222.116.135.77:8080/NCCC_H/mainpage.jsp");
+                URL url = new URL("http://222.116.135.77:8080/NCCC_H/detaileval.jsp");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 conn.setRequestMethod("POST");
 
                 OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
 
-                sendMsg = "userid="+strings[0]+"&hotelcode="+strings[1];
+                sendMsg = "userid="+strings[0]+"&hotelcode="+strings[1]+"&score1="+strings[2]+"&score2="+strings[3]+"&score3="+strings[4]+"&score4="+strings[5]+"&score5="+strings[6]+"&average="+strings[7]+"&starscore="+strings[8];
                 osw.write(sendMsg);
                 osw.flush();
 
