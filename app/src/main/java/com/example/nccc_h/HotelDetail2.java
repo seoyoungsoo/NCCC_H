@@ -8,6 +8,7 @@ import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.DisplayCutout;
@@ -48,7 +49,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutionException;
 
-public class HotelDetail extends AppCompatActivity {
+public class HotelDetail2 extends AppCompatActivity {
 
     final int max = 10;
     final int min = 0;
@@ -114,13 +115,13 @@ public class HotelDetail extends AppCompatActivity {
 
     String userID;
     String hotelname; //호텔이름
-    String hotelcode;
     String cityname; //도시이름
     String price;
 
     String ratingVal;
 
     //AsyncTask 연동을 통해 받아올 내용
+    List<String> hotelcode = new ArrayList<>();
     List<String> address = new ArrayList<>();
     List<String> value1 = new ArrayList<>();
     List<String> value2 = new ArrayList<>();
@@ -132,7 +133,8 @@ public class HotelDetail extends AppCompatActivity {
     List<String> near = new ArrayList<>();
     List<String> url = new ArrayList<>();
 
-    String pop, near2;
+    String pop;
+    String near2;
 
     //방문 호텔의 사용자 평점
     String userVal1;
@@ -141,22 +143,22 @@ public class HotelDetail extends AppCompatActivity {
     String userVal4;
     String userVal5;
 
-
-    DetailTask detailTask = new DetailTask();
+    DetailTask2 detailTask2 = new DetailTask2();
     EvalTask evalTask = new EvalTask();
     Visited visited = new Visited();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hotel_detail);
+        setContentView(R.layout.activity_hotel_detail2);
+
+        userID = getDeviceId();
 
         Intent intent = getIntent();
-        userID = intent.getStringExtra("userID");
         hotelname = intent.getStringExtra("hotelname");
-        hotelcode = intent.getStringExtra("hotelcode");
-        cityname = intent.getStringExtra("citycode");
+        cityname = intent.getStringExtra("cityname");
         price = intent.getStringExtra("price");
+
 
         this.setFirst();
         this.getDetailJsonData();
@@ -164,6 +166,12 @@ public class HotelDetail extends AppCompatActivity {
         this.evalHotel();
         this.setBack();
 
+    }
+
+    public String getDeviceId() {
+        String userId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        return userId;
     }
 
     //호텔 평가하기 누를 때 평가 유무 확인 및 AsyncTask 연동
@@ -187,10 +195,10 @@ public class HotelDetail extends AppCompatActivity {
 
                             //Asynctask 연동
                             if (evalVisited.isChecked() == false) { // 방문하지 않은 호텔, deep 테이블에 추가
-                                evalTask.execute(userID, hotelcode, value1.get(0), value2.get(0), value3.get(0), value4.get(0), value5.get(0), average.get(0), ratingVal);
+                                evalTask.execute(userID, hotelcode.get(0), value1.get(0), value2.get(0), value3.get(0), value4.get(0), value5.get(0), average.get(0), ratingVal);
                             } else if (evalVisited.isChecked() == true) { // 방문 한 호텔, deep 테이블과 visited 테이블에 추가
-                                evalTask.execute(userID, hotelcode, userVal1, userVal2, userVal3, userVal4, userVal5, average.get(0), ratingVal);
-                                visited.execute(userID, hotelname, hotelcode);
+                                evalTask.execute(userID, hotelcode.get(0), userVal1, userVal2, userVal3, userVal4, userVal5, average.get(0), ratingVal);
+                                visited.execute(userID, hotelname, hotelcode.get(0));
                             }
 
                             Toast.makeText(getApplicationContext(), "평가됐습니다.", Toast.LENGTH_SHORT).show();
@@ -449,10 +457,10 @@ public class HotelDetail extends AppCompatActivity {
         htlTitle.setText(hotelname);
 
         Glide.with(this)
-                .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode+".jpg")
+                .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(0)+".jpg")
                 .into(htlImage1);
         Glide.with(this)
-                .load("http://222.116.135.77:8080/NCCC_H/photo2/"+hotelcode+".jpg")
+                .load("http://222.116.135.77:8080/NCCC_H/photo2/"+hotelcode.get(0)+".jpg")
                 .into(htlImage2);
 
         htlCountry.setText(cityname);
@@ -666,10 +674,11 @@ public class HotelDetail extends AppCompatActivity {
     //상세화면 데이터 연동
     public void getDetailJsonData() {
         try {
-            result = detailTask.execute(userID, hotelcode).get();
+            result = detailTask2.execute(userID, hotelname).get();
             JSONArray jsonArray = new JSONObject(result).getJSONArray(userID);
 
             JSONObject jsonObject = jsonArray.getJSONObject(0);
+            hotelcode.add(jsonObject.getString("hotelcode"));
             address.add(jsonObject.getString("address"));
             value1.add(jsonObject.getString("value1"));
             value2.add(jsonObject.getString("value2"));
@@ -693,7 +702,7 @@ public class HotelDetail extends AppCompatActivity {
         }
     }
 
-    class DetailTask extends AsyncTask<String, Void, String> {
+    class DetailTask2 extends AsyncTask<String, Void, String> {
 
         StringBuffer buffer = new StringBuffer();
         String sendMsg;
@@ -703,14 +712,14 @@ public class HotelDetail extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             try {
                 String str;
-                URL url = new URL("http://222.116.135.77:8080/NCCC_H/detailhotel.jsp");
+                URL url = new URL("http://222.116.135.77:8080/NCCC_H/detailhotel2.jsp");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 conn.setRequestMethod("POST");
 
                 OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
 
-                sendMsg = "userid="+strings[0]+"&hotelcode="+strings[1];
+                sendMsg = "userid="+strings[0]+"&hotelname="+strings[1];
                 osw.write(sendMsg);
                 osw.flush();
 
@@ -740,7 +749,7 @@ public class HotelDetail extends AppCompatActivity {
             return receiveMsg;
         }
     }
-    
+
     //평가하기 버튼 클릭 시 결과값을 전달
     class EvalTask extends AsyncTask<String, Void, String> {
 

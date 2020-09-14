@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".HotelRecomView"></activity>
+        <activity android:name=".HotelDetail2" />
+        <activity android:name=".HotelAllView" />
+        <activity android:name=".recyclerview.adapter.hotelAdapter" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HotelAllListview" />
         <activity android:name=".HotelGrasp" />
         <activity android:name=".HotelTutorial" />
         <activity android:name=".HotelReservation" />

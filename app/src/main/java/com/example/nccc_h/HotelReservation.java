@@ -32,8 +32,8 @@ public class HotelReservation extends AppCompatActivity {
     Spinner spinCity;
     Spinner spinType;
 
-    String cityValue = "";
-    String typeValue = "";
+    String cityValue = "전체";
+    String typeValue = "전체 이용후기";
     String min;
     String max;
 
@@ -74,12 +74,13 @@ public class HotelReservation extends AppCompatActivity {
                         min = minPrice.getText().toString();
                         max = maxPrice.getText().toString();
 
-                        Intent intent = new Intent(getApplicationContext(), HotelRecommendListview.class);
+                        Intent intent = new Intent(getApplicationContext(), HotelRecomView.class);
                         intent.putExtra("userID", userID);
                         intent.putExtra("cityValue", cityValue);
                         intent.putExtra("typeValue", typeValue);
                         intent.putExtra("min", min);
                         intent.putExtra("max", max);
+                        Log.i(min, max);
                         startActivity(intent);
                         finish();
                     }
@@ -99,7 +100,21 @@ public class HotelReservation extends AppCompatActivity {
         spinCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                cityValue = spinCity.getSelectedItem().toString();
+                if (spinCity.getSelectedItem().toString().equals("달랏")) {
+                    cityValue = "DaL";
+                } else if (spinCity.getSelectedItem().toString().equals("다낭")) {
+                    cityValue = "DaN";
+                } else if (spinCity.getSelectedItem().toString().equals("나트랑")) {
+                    cityValue = "Nha";
+                } else if (spinCity.getSelectedItem().toString().equals("하노이")) {
+                    cityValue = "Ha";
+                } else if (spinCity.getSelectedItem().toString().equals("호이안")) {
+                    cityValue = "Hoi";
+                } else if (spinCity.getSelectedItem().toString().equals("호치민")) {
+                    cityValue = "Ho";
+                } else {
+                    cityValue = "전체";
+                }
             }
 
             @Override
@@ -111,7 +126,11 @@ public class HotelReservation extends AppCompatActivity {
         spinType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                typeValue = spinType.getSelectedItem().toString();
+                if (position == 0) {
+                    typeValue = "전체 이용후기";
+                } else {
+                    typeValue = spinType.getSelectedItem().toString();
+                }
             }
 
             @Override

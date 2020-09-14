@@ -15,7 +15,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -86,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         hotelRecm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {  // AI 전체보기
-                Intent intent = new Intent(getApplicationContext(), HotelAllListview.class);
+                Intent intent = new Intent(getApplicationContext(), HotelAllView.class);
                 intent.putExtra("userID", userID);
                 startActivity(intent);
             }
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             if (a > 5.0) {
                 starscore = "5.0";
             } else {
-                starscore = String.format("%.1f", k);
+                starscore = String.format("%.1f", a);
             }
 
         } catch (InterruptedException e) {
