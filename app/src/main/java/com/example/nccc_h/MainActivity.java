@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     String hotelname;
     String citycode;
     String starscore;
+    String price;
 
     MainTask mainTask = new MainTask();
     MainTask2 mainTask2 = new MainTask2();
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) { // 더보기
                 Intent intent = new Intent(getApplicationContext(), HotelDetail.class);
                 //호텔 정보 putExtra
+                intent.putExtra("price", price);
                 intent.putExtra("citycode", citycode);
                 intent.putExtra("hotelcode", hotelcode);
                 intent.putExtra("hotelname", hotelname);
@@ -125,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject jsonObject = jsonArray.getJSONObject(0);
 
             hotelcode = jsonObject.getString("hotelcode");
+            price = jsonObject.getString("price");
             k = (jsonObject.getString("starscore"));
 
             float a = Float.parseFloat(k);

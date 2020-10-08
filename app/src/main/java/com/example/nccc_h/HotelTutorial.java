@@ -690,14 +690,14 @@ public class HotelTutorial extends AppCompatActivity {
         tutRating_lay11.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                ratingVal1 = Float.toString(rating);
+                ratingVal11 = Float.toString(rating);
             }
         });
 
         tutRating_lay12.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                ratingVal2 = Float.toString(rating);
+                ratingVal12 = Float.toString(rating);
             }
         });
 
@@ -1185,7 +1185,7 @@ public class HotelTutorial extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             try {
                 String str;
-                URL url = new URL("http://222.116.135.77:8080/NCCC_H/pricecheck.jsp");
+                URL url = new URL("http://222.116.135.77:8080/NCCC_H/tutorial.jsp");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 conn.setRequestMethod("POST");

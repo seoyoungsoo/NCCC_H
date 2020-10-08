@@ -17,7 +17,6 @@
         <activity android:name=".HotelRecomView"></activity>
         <activity android:name=".HotelDetail2" />
         <activity android:name=".HotelAllView" />
-        <activity android:name=".recyclerview.adapter.hotelAdapter" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +27,6 @@
         <activity android:name=".HotelGrasp" />
         <activity android:name=".HotelTutorial" />
         <activity android:name=".HotelReservation" />
-        <activity android:name=".HotelRecommendListview" />
         <activity android:name=".HotelDetail" />
         <activity android:name=".MainActivity" />
 

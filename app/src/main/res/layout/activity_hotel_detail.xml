@@ -523,7 +523,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_shape_reservation"
                     android:layout_alignParentBottom="true"
-                    android:text="예 약 하 기"
+                    android:text="호텔정보 보기"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="20dp"/>
