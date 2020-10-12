@@ -1,11 +1,17 @@
 package com.example.nccc_h;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialog;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,10 +40,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import javax.net.ssl.HandshakeCompletedEvent;
+
 
 public class HotelTutorial extends AppCompatActivity {
 
     private static int TIME_OUT = 500;
+    private static int PROGRESS_TIME = 12000;
 
     ImageView tutImage1_lay1;
     ImageView tutImage2_lay1;
@@ -337,6 +346,8 @@ public class HotelTutorial extends AppCompatActivity {
     boolean bn;
 
     Model_Server model_server = new Model_Server();
+
+    AppCompatDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -1164,15 +1175,77 @@ public class HotelTutorial extends AppCompatActivity {
                                 tutorialData12.execute(userID, hotelcode.get(11), score1.get(11), score2.get(11), score3.get(11), score4.get(11), score5.get(11), average.get(11), ratingVal12);
                                 Toast.makeText(getApplicationContext(), "튜토리얼이 완료됐습니다.", Toast.LENGTH_SHORT).show();
                                 model_server.sendId(userID); //모델 학습
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
-                                finish();
+
+                                //로딩 화면 추가
+                                startProgress();
                             }
                         }, TIME_OUT);
                         break;
                 }
             }
         });
+    }
+
+    public void progressON(Activity activity, String message) {
+        if (activity == null || activity.isFinishing()) {
+            return;
+        }
+
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressSET(message);
+        } else {
+            progressDialog = new AppCompatDialog(activity);
+            progressDialog.setCancelable(false);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            progressDialog.setContentView(R.layout.progress_loading);
+            progressDialog.show();
+        }
+
+        final ImageView img_loading_frame = (ImageView) progressDialog.findViewById(R.id.iv_frame_loading);
+        final AnimationDrawable frameAnimation = (AnimationDrawable) img_loading_frame.getBackground();
+        img_loading_frame.post(new Runnable() {
+            @Override
+            public void run() {
+                frameAnimation.start();
+            }
+        });
+
+        TextView tv_progress_message = (TextView) progressDialog.findViewById(R.id.tv_message);
+        if (!TextUtils.isEmpty(message)) {
+            tv_progress_message.setText(message);
+        }
+    }
+
+    public void progressSET(String message) {
+        if (progressDialog == null || !progressDialog.isShowing()) {
+            return;
+        }
+
+        TextView tv_progress_message = (TextView) progressDialog.findViewById(R.id.tv_message);
+        if (!TextUtils.isEmpty(message)) {
+            tv_progress_message.setText(message);
+        }
+    }
+
+    public void progressOFF() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+    }
+
+    //로딩 시간 이후 메인화면 호출
+    public void startProgress() {
+        progressON(this, "Loading..");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressOFF();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, PROGRESS_TIME);
     }
 
     class HotelData extends AsyncTask<String, Void, String> {
