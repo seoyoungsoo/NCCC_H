@@ -55,6 +55,8 @@ public class HotelGrasp extends AppCompatActivity {
 
     String result;
 
+    Model_Data modelData = new Model_Data();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +95,7 @@ public class HotelGrasp extends AppCompatActivity {
                                 Log.i("hihi", ""+e);
                             }
                             while (insertDB);
+                            modelData.sendID(userID);
                             Intent i = new Intent(getApplicationContext(), HotelTutorial.class);
                             i.putExtra("min", min);
                             i.putExtra("max", max);

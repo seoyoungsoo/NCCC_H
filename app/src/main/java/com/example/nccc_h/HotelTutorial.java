@@ -46,7 +46,7 @@ import javax.net.ssl.HandshakeCompletedEvent;
 public class HotelTutorial extends AppCompatActivity {
 
     private static int TIME_OUT = 500;
-    private static int PROGRESS_TIME = 12000;
+    private static int PROGRESS_TIME = 10000;
 
     ImageView tutImage1_lay1;
     ImageView tutImage2_lay1;
@@ -1173,10 +1173,9 @@ public class HotelTutorial extends AppCompatActivity {
                             @Override
                             public void run() {
                                 tutorialData12.execute(userID, hotelcode.get(11), score1.get(11), score2.get(11), score3.get(11), score4.get(11), score5.get(11), average.get(11), ratingVal12);
-                                Toast.makeText(getApplicationContext(), "튜토리얼이 완료됐습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "취향찾기가 완료됐습니다.", Toast.LENGTH_SHORT).show();
                                 model_server.sendId(userID); //모델 학습
-
-                                //로딩 화면 추가
+                                //학습 로딩 화면
                                 startProgress();
                             }
                         }, TIME_OUT);
