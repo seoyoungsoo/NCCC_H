@@ -39,6 +39,9 @@ public class HotelAllView extends AppCompatActivity {
     HotelView hotelView = new HotelView();
 
     String userID;
+    String min;
+    String max;
+
     String result;
 
     int i, count, co;
@@ -62,6 +65,8 @@ public class HotelAllView extends AppCompatActivity {
 
         Intent intent = getIntent();
         userID = intent.getStringExtra("userID");
+        min = intent.getStringExtra("min");
+        max = intent.getStringExtra("max");
 
         addShow = (ImageView) findViewById(R.id.hotel_addshow);
 
@@ -97,7 +102,7 @@ public class HotelAllView extends AppCompatActivity {
     public void getHotelJsonData() {
         try {
             String j;
-            result = hotelView.execute(userID).get();
+            result = hotelView.execute(userID, min, max).get();
             jsonArray = new JSONObject(result).getJSONArray(userID);
 
             if (jsonArray != null) {
@@ -181,7 +186,7 @@ public class HotelAllView extends AppCompatActivity {
 
                 OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
 
-                sendMsg = "userid="+strings[0];
+                sendMsg = "userid="+strings[0]+"&min="+strings[1]+"&max="+strings[2];
                 osw.write(sendMsg);
                 osw.flush();
 

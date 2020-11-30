@@ -61,6 +61,7 @@ public class HotelDetail extends AppCompatActivity {
     TextView htlTitle;
     TextView htlCountry;
     TextView htlAddr;
+    TextView htlReview;
 
     TextView htlPrgrNum1;
     TextView htlPrgrNum2;
@@ -127,6 +128,7 @@ public class HotelDetail extends AppCompatActivity {
     List<String> value3 = new ArrayList<>();
     List<String> value4 = new ArrayList<>();
     List<String> value5 = new ArrayList<>();
+    List<String> reviewer = new ArrayList<>();
     List<String> average = new ArrayList<>();
     List<String> popular = new ArrayList<>();
     List<String> near = new ArrayList<>();
@@ -421,6 +423,8 @@ public class HotelDetail extends AppCompatActivity {
         htlCountry = (TextView) findViewById(R.id.hotel_country);
         htlAddr = (TextView) findViewById(R.id.hotel_addr);
 
+        htlReview = (TextView) findViewById(R.id.reviewer);
+
         htlPrgrNum1 = (TextView) findViewById(R.id.progress_1);
         htlPrgrNum2 = (TextView) findViewById(R.id.progress_2);
         htlPrgrNum3 = (TextView) findViewById(R.id.progress_3);
@@ -458,6 +462,7 @@ public class HotelDetail extends AppCompatActivity {
         htlCountry.setText(cityname);
 
         htlAddr.setText(address.get(0));
+        htlReview.setText(reviewer.get(0));
 
         htlPrgrBar1.setProgress((int)(Float.parseFloat(value1.get(0))*10));
         htlPrgrNum1.setText(value1.get(0));
@@ -676,6 +681,7 @@ public class HotelDetail extends AppCompatActivity {
             value3.add(jsonObject.getString("value3"));
             value4.add(jsonObject.getString("value4"));
             value5.add(jsonObject.getString("value5"));
+            reviewer.add(jsonObject.getString("reviewer"));
             average.add(jsonObject.getString("average"));
             popular.add(jsonObject.getString("popular"));
             near.add(jsonObject.getString("near"));

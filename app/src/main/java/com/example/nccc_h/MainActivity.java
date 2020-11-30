@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
     LinearLayout addshow_layout;
 
+    String min;
+    String max;
     String result;
     String result2;
     String hotelcode;
@@ -88,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {  // AI 전체보기
                 Intent intent = new Intent(getApplicationContext(), HotelAllView.class);
                 intent.putExtra("userID", userID);
+                intent.putExtra("min", min);
+                intent.putExtra("max", max);
                 startActivity(intent);
             }
         });
@@ -126,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
 
             JSONObject jsonObject = jsonArray.getJSONObject(0);
 
+            min = jsonObject.getString("min");
+            max = jsonObject.getString("max");
             hotelcode = jsonObject.getString("hotelcode");
             price = jsonObject.getString("price");
             k = (jsonObject.getString("starscore"));
