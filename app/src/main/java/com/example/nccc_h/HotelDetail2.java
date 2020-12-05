@@ -115,6 +115,7 @@ public class HotelDetail2 extends AppCompatActivity {
     String result;
 
     String userID;
+    String hotelcode;
     String hotelname; //호텔이름
     String cityname; //도시이름
     String price;
@@ -122,7 +123,6 @@ public class HotelDetail2 extends AppCompatActivity {
     String ratingVal;
 
     //AsyncTask 연동을 통해 받아올 내용
-    List<String> hotelcode = new ArrayList<>();
     List<String> address = new ArrayList<>();
     List<String> value1 = new ArrayList<>();
     List<String> value2 = new ArrayList<>();
@@ -157,6 +157,7 @@ public class HotelDetail2 extends AppCompatActivity {
         userID = getDeviceId();
 
         Intent intent = getIntent();
+        hotelcode = intent.getStringExtra("hotelcode");
         hotelname = intent.getStringExtra("hotelname");
         cityname = intent.getStringExtra("cityname");
         price = intent.getStringExtra("price");
@@ -197,10 +198,10 @@ public class HotelDetail2 extends AppCompatActivity {
 
                             //Asynctask 연동
                             if (evalVisited.isChecked() == false) { // 방문하지 않은 호텔, deep 테이블에 추가
-                                evalTask.execute(userID, hotelcode.get(0), value1.get(0), value2.get(0), value3.get(0), value4.get(0), value5.get(0), average.get(0), ratingVal);
+                                evalTask.execute(userID, hotelcode, value1.get(0), value2.get(0), value3.get(0), value4.get(0), value5.get(0), average.get(0), ratingVal);
                             } else if (evalVisited.isChecked() == true) { // 방문 한 호텔, deep 테이블과 visited 테이블에 추가
-                                evalTask.execute(userID, hotelcode.get(0), userVal1, userVal2, userVal3, userVal4, userVal5, average.get(0), ratingVal);
-                                visited.execute(userID, hotelname, hotelcode.get(0));
+                                evalTask.execute(userID, hotelcode, userVal1, userVal2, userVal3, userVal4, userVal5, average.get(0), ratingVal);
+                                visited.execute(userID, hotelname, hotelcode);
                             }
 
                             Toast.makeText(getApplicationContext(), "평가됐습니다.", Toast.LENGTH_SHORT).show();
@@ -458,12 +459,11 @@ public class HotelDetail2 extends AppCompatActivity {
     //상세화면
     public void getHotelData() {
         htlTitle.setText(hotelname);
-
         Glide.with(this)
-                .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode.get(0)+".jpg")
+                .load("http://222.116.135.77:8080/NCCC_H/photo1/"+hotelcode+".jpg")
                 .into(htlImage1);
         Glide.with(this)
-                .load("http://222.116.135.77:8080/NCCC_H/photo2/"+hotelcode.get(0)+".jpg")
+                .load("http://222.116.135.77:8080/NCCC_H/photo2/"+hotelcode+".jpg")
                 .into(htlImage2);
 
         htlCountry.setText(cityname);
@@ -682,7 +682,7 @@ public class HotelDetail2 extends AppCompatActivity {
             JSONArray jsonArray = new JSONObject(result).getJSONArray(userID);
 
             JSONObject jsonObject = jsonArray.getJSONObject(0);
-            hotelcode.add(jsonObject.getString("hotelcode"));
+            //hotelcode.add(jsonObject.getString("hotelcode"));
             address.add(jsonObject.getString("address"));
             value1.add(jsonObject.getString("value1"));
             value2.add(jsonObject.getString("value2"));

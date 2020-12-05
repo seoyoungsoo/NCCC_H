@@ -53,8 +53,7 @@ public class HotelReservation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_reservation);
 
-        //userID = getIntent().getStringExtra("userID");
-        userID = getDeviceId();
+        userID = getIntent().getStringExtra("userID");
 
         setFirst();
         setSpinner();

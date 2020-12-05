@@ -66,6 +66,7 @@ public class HotelRecomView extends AppCompatActivity {
         min = i.getStringExtra("min");
         max = i.getStringExtra("max");
 
+
         addShow = (ImageView) findViewById(R.id.hotel_addshow);
 
         this.getHotelJsonData();
@@ -85,6 +86,7 @@ public class HotelRecomView extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int position) {
                 Intent i = new Intent(getApplicationContext(), HotelDetail2.class);
+                i.putExtra("hotelcode", hotelcode.get(position));
                 i.putExtra("hotelname", hotelname.get(position));
                 i.putExtra("cityname", cityname.get(position));
                 i.putExtra("price", price.get(position));
